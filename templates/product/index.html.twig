@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Galerie - Vincent LHMTE Art{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Filtrer</h3>
+            {{ form(form) }}
+        </div>
+        <div class="col-md-9">
+            <h3>Tableaux</h3>
+
+
+            <div class="product-container">
+                {% for product in products %}
+                    <div class="product-card">
+                        {% include "product/single_product.html.twig" %}
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+
+{% endblock %}

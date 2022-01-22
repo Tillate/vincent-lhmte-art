@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block carousel %}{% endblock %}
+
+{% block content %}
+
+        {# <!-- Three columns of text below the carousel -->
+        <h3>Nos meilleurs ventes</h3>
+        <p>Decouvrez les articles les plus vendus.</p>
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-3">
+                    {% include "product/single_product.html.twig" %}
+                </div>
+            {% endfor %}   
+        </div>#}
+
+        <div class="container-home">
+            <div>
+                <h2>Découvrez les œuvres d’art abstrait de Vincent Lhmte</h2>
+                <p>Vincent l’Hermite est un artiste peintre français talentueux. Son style s’est développé comme abstrait géométrique, voulant transmettre diverses émotions aux travers de ses tableaux, il compose des peintures abstraites unique marquées par des formes géométrique, du relief, une palette de couleurs très pigmentée et une douce musicalité. La lumières, les effets d’optique et le mouvement sont devenus des thèmes récurrents dans ses premières œuvres à l’acrylique.</p>
+            </div>
+            <div>
+                <img src="{{ asset('assets/img/vincent.jpg')}}" width="600px" alt="photo de l'artiste peintre Vincent LHMTE">
+            </div>
+            <p class="quote">« L’inspiration me vient des formes, textures et couleurs de l’environnement qui m’entoure. »</p>
+
+
+            <div>
+                <h2>Venez découvrir mes oeuvres <span class="text-muted"> à une exposition</span></h2>
+                <p class>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+            <div>
+                <img src="{{ asset('assets/img/exposition.png') }}" alt="" width="600px">
+            </div>
+        
+        </div>
+
+        <!-- /END THE FEATURETTES -->
+
+{% endblock %}
