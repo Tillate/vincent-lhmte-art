@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="container-exhibition">
+
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ul>
+                <li><a href="">Bio</a></li>
+                <li><span aria-current="page">Expositions</span></li>
+            </ul>
+        </nav>
+
+        <h1>Expositions d'art abstrait</h1>
+
+        <div>
+            <h2>L'agenda des expositions</h2>
+            <p>Venez le rencontrer et découvrir ses oeuvres lors d'une exposition</p>
+        </div>
+
+        <div class="exhibitions-description">
+            <img src="{{ asset('assets/img/exposition.png') }}" alt="Exposition d'art abstrait Paris Art expo" width="600px">
+            <p class="exhibitions-text">PARIS ART EXPO<br>28 rue Beaurepaire, 75010 Paris</p>
+        </div>
+
+    </div>
+
+
+{% endblock %}

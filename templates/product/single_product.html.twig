@@ -6,6 +6,6 @@
         {# <div class="product-subtitle">{{ product.subtitle }}</div> #}
         <p class="product-price">{{ (product.price / 100)|number_format(2, ',') }} €</p>
         <span>
-            <a href="{{ path('add-to-cart', { 'id': product.id })}}" class="panier">Ajouter au panier</a>
+            <a href="{{ path('add-to-cart', { 'id': product.id })}}" class="add-cart">Ajouter au panier</a>
         </span>
 </div>
