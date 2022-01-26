@@ -52,14 +52,14 @@
                 </li>
             </ul>
         </nav> #}
-        <div class="right">
+        <div class="cart-link">
             {% if app.user %}
                 <a href="{{ path('account') }}">Mon compte <small>({{app.user.firstname}})</small></a> | <a href="{{ path('app_logout') }}">Déconnexion</a>
             {% else %}
                 <a href="{{ path('app_login') }}">Connexion</a> | <a href="{{ path('register') }}">Inscription</a>
             {% endif %}
             <a href="{{ path('cart') }}">
-                <img src="{{ asset('assets/img/shopping-bag.png') }}" class="cart-icon" alt="Mon panier" width="20px" height="20px">
+                <img src="{{ asset('assets/img/shopping-bag.png') }}" class="cart-icon" alt="Mon panier" width="21px" height="21px">
             </a>
         </div>
         {# <nav role="navigation">

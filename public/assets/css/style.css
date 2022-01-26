@@ -32,13 +32,14 @@ h2 {
     margin-bottom: 30px;
 }
 
-p {
-    font-weight: 300;
+h3 {
+    font-size: 1.6em;
+    font-weight: 400;
+    margin: 30px 0 15px 0;
 }
 
-.container-home p {
-    line-height: 1.6em;
-    margin-bottom: 50px;
+p {
+    font-weight: 300;
 }
 
 a {
@@ -65,9 +66,9 @@ header {
 .menuToggle {
     display: block;
     position: absolute;
-    top: 30px;
-    right: 50px;
-    padding: 30px 0 0 50px;
+    top: 64px;
+    right: 30px;
+    /* padding: 30px 0 0 50px; */
     z-index: 1;
 }
   
@@ -80,8 +81,8 @@ header {
     width: 30px;
     height: 30px;
     position: absolute;
-    top: 21px;
-    left: 45px;
+    top: -5px;
+    left: 0px;
     cursor: pointer;
     opacity: 0;
     z-index: 2;
@@ -131,14 +132,15 @@ header {
     font-weight: 400;
     position: absolute;
     width: 100vw;
-    right: -50px;
+    right: -30px;
     display: flex;
     flex-direction: column;
     align-items: end;
     text-align: right;
+    gap: 35px;
     margin: -107px 0 0 0;
-    padding: 50px;
-    padding-top: 125px;
+    padding: 150px 50px 50px 50px;
+    /* padding-top: 125px; */
     background: #F2F5F7;
     transform: translate(0, -100%);
     transition: transform 0.6s cubic-bezier(0.77,0.2,0.05,1.0);
@@ -154,11 +156,14 @@ header {
     transform: none;
 }
 
-.right {
+.cart-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     position: absolute;
     height: 35px;
     z-index: 10;
-    right: 150px;
+    right: 80px;
 }
 .cart-icon {
     margin-left: 10px;
@@ -201,7 +206,7 @@ header {
         position: relative;
 
     }
-    .right {
+    .cart-link {
         right: 50px;
     }
     /* HOVER EFFECT UNDERLINE */
@@ -332,20 +337,11 @@ header ul li {
     position: relative;
 } */
 
-
+/* MAIN */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.container-home {
-    max-width: 1290px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 50px;
 }
 
 .title {
@@ -355,18 +351,129 @@ header ul li {
     margin: 50px 0;
 }
 
-.link-home {
-    text-decoration: underline;
+/* HOME PAGE */
+.container-home {
+    width: 100%;
+    max-width: 1290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 50px;
 }
 
-a:hover {
-    color: inherit;
+.container-home p {
+    line-height: 1.6em;
+    margin-bottom: 20px;
 }
 
-.nav-right {
-    position: absolute;
+.home-img img {
+    width: 100%;
 }
 
+.quote {
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.2em;
+    margin: 30px 0 65px 0;
+}
+
+@media only screen and (min-width: 1024px) {
+    .container-description {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 34px;
+    }
+}
+
+.square-paint-container, .zoomed-paint-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.square-paint-container img{
+    width: 30%;
+}
+
+.zoomed-paint-container img {
+    width: 48%;
+}
+.primary-img {
+    width: 100%;
+}
+
+.home-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 80%;
+    text-transform: uppercase;
+    margin: 50px 0;
+    border: 1px solid var(--color-blue);
+    border-radius: 3px;
+}
+
+.container-review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    margin: 50px 0;
+}
+
+.card-reviews {
+    text-align: center;
+}
+.container-review h2, .card-reviews p {
+    margin: 0;
+}
+.card-reviews p:first-child{
+    margin-bottom: 10px;
+}
+
+.container-assurance {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container-assurance h3 {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+@media only screen and (min-width: 1024px) {
+    .home-cta {
+        width: 40%;
+    }
+    .home-cta:hover{
+        background-color: var(--color-blue);
+        box-shadow: inset 5em 0 0 0 var(--color-blue),
+        inset -5em 0 0 0 var(--color-blue);
+        border-color: var(--color-blue);
+        color: #ffff;
+        transition:all 0.4s;
+    }
+    .container-assurance {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+
+/* Fil d'Arriane */
 .breadcrumb {
     margin-bottom: 30px;
     align-self: flex-start;
@@ -381,72 +488,6 @@ a:hover {
     content: "";
     margin: 0;
 }
-
-
-
-.quote {
-    font-weight: 400;
-    font-style: italic;
-    font-size: 1.2em;
-    margin: 30px 0 65px 0;
-}
-
-.container-description {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 34px;
-}
-
-.container-review {
-    margin-top: 50px;
-    text-align: center;
-}
-.container-assurance {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.container-assurance h3 {
-    text-transform: uppercase;
-    font-size: 1.2em;
-    font-weight: 400;
-    margin: 20px 0;
-}
-
-
-.square-paint-container, .zoomed-paint-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 30px
-}
-
-.square-paint-container img{
-    width: calc(100% / 3);
-    height: calc(100% / 3);
-}
-
-.home-cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 70px;
-    width: 30%;
-    text-transform: uppercase;
-    margin: 30px 0;
-}
-
-.card-reviews {
-    text-align: center;
-}
-.card-reviews p:first-child{
-    margin: 0 0 15px 0;
-}
-
 
 
 footer {
