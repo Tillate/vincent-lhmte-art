@@ -4,81 +4,97 @@
 
 {% block content %}
 
-        {# <!-- Three columns of text below the carousel -->
-        <h3>Nos meilleurs ventes</h3>
-        <p>Decouvrez les articles les plus vendus.</p>
-        <div class="row">
-            {% for product in products %}
-                <div class="col-md-3">
-                    {% include "product/single_product.html.twig" %}
-                </div>
-            {% endfor %}   
-        </div>#}
-
-        <div class="container-home">
-            <div>
-                <h2>Découvrez les œuvres d’art abstrait de Vincent Lhmte</h2>
-                <p>Vincent l’Hermite est un artiste peintre français talentueux. Son style s’est développé comme abstrait géométrique, voulant transmettre diverses émotions aux travers de ses tableaux, il compose des peintures abstraites unique marquées par des formes géométrique, du relief, une palette de couleurs très pigmentée et une douce musicalité. La lumières, les effets d’optique et le mouvement sont devenus des thèmes récurrents dans ses premières œuvres à l’acrylique.</p>
+    {# <!-- Three columns of text below the carousel -->
+    <h3>Nos meilleurs ventes</h3>
+    <p>Decouvrez les articles les plus vendus.</p>
+    <div class="row">
+        {% for product in products %}
+            <div class="col-md-3">
+                {% include "product/single_product.html.twig" %}
             </div>
-            <div>
-                <img src="{{ asset('assets/img/vincent.jpg')}}" width="600px" alt="photo de l'artiste peintre Vincent LHMTE">
-            </div>
+        {% endfor %}   
+    </div>#}
 
-            <p class="quote">« L’inspiration me vient des formes, des textures et couleurs de l’environnement qui m’entoure. »</p>
-
-            <div class="container-description">
-                <div class="card-description">
-                    <h2>Background</h2>
-                    <p>Vincent L’Hermitte est un artiste peintre Français vivant à Paris. Né à Dinan, il développe durant son adolescence une grande sensibilité artistique. Au cours de l’année 2020, il s’est découvert une passion et un talent pour la peinture et l’art abstrait, produisant de nombreuses œuvres étonnantes.</p>
-                </div>
-                <div class="card-description">
-                    <h2>Inspiration</h2>
-                    <p>A chaque nouvelle peinture, Vincent répond à l’appel de la créativité. Influencé par l’univers qui l’entour, son style s’est développé comme impressionniste, voulant transmettre diverses émotions aux travers de ses tableaux. La lumières, les effets d’optique et le mouvement sont devenus des thèmes récurrents dans ses premières œuvres à l’acrylique.</p>
-                </div>
-                <div class="card-description">
-                    <h2>Style</h2>
-                    <p>Son style s’est développé comme abstrait géométrique, voulant transmettre diverses émotions aux travers de ses tableaux, il compose des peintures abstraites marquées par des formes géométrique, du relief, une palette de couleurs très pigmentée et une douce musicalité.</p>
-                </div>
-            </div>
-
-            <div class="square-paint-container">
-                <img src="{{ asset('assets/img/miami.png') }}" alt="Tableau d'art abstrait Miami">
-                <img src="{{ asset('assets/img/sunlights.jpg') }}" alt="Tableau d'art abstrait Sunlights">
-                <img src="{{ asset('assets/img/labyrinth.png') }}" alt="Tableau d'art abstrait Labyrinth">
-            </div>
-
-            <div class="zoomed-paint-container">
-                <img src="{{ asset('assets/img/fluctus.png') }}" alt="Tableau d'art abstrait Fluctus">
-                <img src="{{ asset('assets/img/puzzle.png') }}" alt="Tableau d'art abstrait Puzzle">
-            </div>
-            <img src="{{ asset('assets/img/primary.png') }}" alt="Tableau d'art abstrait Primary">
-            
-            <a href="{{ path('products') }}" class="add-cart home-cta">accéder à la galerie</a>
-            
-
-            <div class="">
-                <h2>Les retours clients</h2>
-                <div class="card-reviews">
-                    <p>“J’ai la chance d’avoir l’un des chefs-d’œuvre de Vincent accroché fièrement sur mon mur. C’est l’une de ces pièces qui capte l’attention de la plupart des gens lorsqu’ils entrent dans ma maison. Le talent et la connaissance de l’art de Vincent sont inspirants, il surpasse ses pairs avec sa compréhension de la profondeur et de la couleur, et crée toujours des tableaux originaux et différents à chaque fois. Je suis tellement reconnaissant d’être propriétaire d’une œuvre d’art de Vincent LHMTE.”</p>
-                    <p>- JULIEN LEPENNEC</p>
-                </div>
-                <div class="card-reviews">
-                    <p>“J’ai la chance d’avoir l’un des chefs-d’œuvre de Vincent accroché fièrement sur mon mur. C’est l’une de ces pièces qui capte l’attention de la plupart des gens lorsqu’ils entrent dans ma maison. Le talent et la connaissance de l’art de Vincent sont inspirants, il surpasse ses pairs avec sa compréhension de la profondeur et de la couleur, et crée toujours des tableaux originaux et différents à chaque fois. Je suis tellement reconnaissant d’être propriétaire d’une œuvre d’art de Vincent LHMTE.”</p>
-                    <p>- PIERRE BUSNEL</p>
-                </div>
-            </div>
-
-
-            <div>
-                <h2>Venez découvrir mes oeuvres à une exposition</h2>
-                <p class>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div>
-                <img src="{{ asset('assets/img/exposition.png') }}" alt="" width="600px">
-            </div>
-
+    <div class="container-home">
+        <div>
+            <h2>Découvrez les œuvres d’art abstrait de Vincent Lhmte</h2>
+            <p>Salut moi c’est Vincent l’Hermite, artiste peintre français et passionné d’art. Ce qui m’inspire ? La musique (avec mes DJ set), la Bretagne (d’où je suis originaire).
+                <br>J’aime créer des tableaux abstraits, géométriques au colorations pigmentés. La lumière, les couleurs, les effets d’optique et le mouvement sont les thèmes qui façonnent mes premiers tableaux à l’acrylique.
+                <br>Tous mes tableaux d’artiste sont disponible en ligne.
+                <br>Vous souhaitez un tableau unique ou une commande personnalisée ? N’hésitez pas à m’envoyer un message via le <a href="{{ path('contact') }}" class="link-home">formulaire de contact</a>.
+            </p>
+        </div>
+        <div>
+            <img src="{{ asset('assets/img/vincent.jpg')}}" width="600px" alt="photo de l'artiste peintre Vincent LHMTE">
         </div>
 
-        <!-- /END THE FEATURETTES -->
+        <p class="quote">« L’inspiration me vient des formes, des textures et couleurs de l’environnement qui m’entoure. »</p>
+
+        <div class="container-description">
+            <div class="card-description">
+                <h2>Background</h2>
+                <p>Passionné par la création depuis mon plus jeune âge, âme d’artiste, autodidacte, j’ai d’abord commencé à produire de la musique pendant 5 ans avant de me tourner il y a un an vers la peinture.</p>
+            </div>
+            <div class="card-description">
+                <h2>Style</h2>
+                <p>Mon univers créatif est un mélange de formes géométriques et de perspectives. Avec l’envie d’offrir au spectateur une vision en 3 dimensions laissant l’œuvre vivre et s’exporter au delà des 4 coins de la toile. On y retrouve alors un travail sur les ombres et les lumières, le tout apportant une réelle dynamique du tableau.</p>
+            </div>
+            <div class="card-description">
+                <h2>Technique</h2>
+                <p>J’ai naturellement commencé à utiliser dans mes toiles des couleurs très vives, retranscrivant la modernité dans l’abstrait. Les couleurs s’entremêlent harmonieusement sous différentes formes qu’elles soient saillantes ou courbées, sous différentes textures au pinceau comme au couteau.</p>
+            </div>
+        </div>
+
+        <div class="square-paint-container">
+            <img src="{{ asset('assets/img/miami.png') }}" alt="Tableau d'art abstrait Miami">
+            <img src="{{ asset('assets/img/sunlights.jpg') }}" alt="Tableau d'art abstrait Sunlights">
+            <img src="{{ asset('assets/img/labyrinth.png') }}" alt="Tableau d'art abstrait Labyrinth">
+        </div>
+
+        <div class="zoomed-paint-container">
+            <img src="{{ asset('assets/img/fluctus.png') }}" alt="Tableau d'art abstrait Fluctus">
+            <img src="{{ asset('assets/img/puzzle.png') }}" alt="Tableau d'art abstrait Puzzle">
+        </div>
+        <img src="{{ asset('assets/img/primary.png') }}" alt="Tableau d'art abstrait Primary">
+        
+        <a href="{{ path('products') }}" class="add-cart home-cta">accéder à la galerie</a>
+        
+
+        <div class="container-review">
+            <h2>Les retours clients</h2>
+            <div class="card-reviews">
+                <p>“J’ai la chance d’avoir l’un des chefs-d’œuvre de Vincent accroché fièrement sur mon mur. C’est l’une de ces pièces qui capte l’attention de la plupart des gens lorsqu’ils entrent dans ma maison. Le talent et la connaissance de l’art de Vincent sont inspirants, il surpasse ses pairs avec sa compréhension de la profondeur et de la couleur, et crée toujours des tableaux originaux et différents à chaque fois. Je suis tellement reconnaissant d’être propriétaire d’une œuvre d’art de Vincent LHMTE.”</p>
+                <p>- JULIEN LEPENNEC</p>
+            </div>
+            <div class="card-reviews">
+                <p>“Artiste talentueux, toujours à la recherche dans une démarche de qualité de travail, un perfectionniste de la couleur. Très belle toile peinte à l’acrylique qui amène une touche d’originalité et de couleurs bienvenues, des prix très raisonnables compte tenu de la qualité du travail et enfin une expédition très soignée. Merci Vincent LHMTE.”</p>
+                <p>- PIERRE BUSNEL</p>
+            </div>
+        </div>
+
+        <div class="container-assurance">
+            <div class="card-description">
+            <img src="{{ asset('assets/img/icons/credit-card.png') }}" alt="Icone paiement sécurisé">
+                <h3>Paiement sécurisé</h3>
+                <p>Payer en toute sécurité</p>
+            </div>
+            <div class="card-description">
+                <img src="{{ asset('assets/img/icons/delivery.png') }}" alt="Icone livraison rapide">
+                <h3>Livraison en 48h</h3>
+                <p>Votre colis livrer en 48h avec Collissimo</p>
+            </div>
+            <div class="card-description">
+                <img src="{{ asset('assets/img/icons/delivered.png') }}" alt="Icone retrait gratuit">
+                <h3>Retrait gratuit</h3>
+                <p>Retirer gratuitement votre tableau sur Paris</p>
+            </div>
+            <div class="card-description">
+                <img src="{{ asset('assets/img/icons/gift.png') }}" alt="Icone emballage premium">
+                <h3>Emballage Premium</h3>
+                <p>Parce que votre satisfaction est ma priorité, j’accorde une attention particulière à la préparation de vos colis</p>
+            </div>
+        </div>
+
+    </div>
 
 {% endblock %}

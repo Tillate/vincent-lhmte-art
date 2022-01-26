@@ -20,7 +20,23 @@
     </head>
 <body>
     <header>
-        <nav>
+
+        <nav role="navigation">
+            <div class="menuToggle">
+              <input type="checkbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+              <ul class="menu">
+                <li><a href="{{ path('home') }}">Bio</a></li>
+                <li><a href="{{ path('products') }}">Galerie</a></li>
+                <li><a href="{{ path('exhibitions') }}">Expositions</a></li>
+                <li><a href="{{ path('contact') }}">Contact</a></li>
+              </ul>
+            </div>
+        </nav>
+
+        {# <nav>
             <ul class="navbar">
                 <li>
                     <a href="{{ path('home') }}">Bio</a>
@@ -35,56 +51,70 @@
                     <a href="{{ path('contact') }}">Contact</a>
                 </li>
             </ul>
-        </nav>
-        <div class="cart">
+        </nav> #}
+        <div class="right">
             {% if app.user %}
                 <a href="{{ path('account') }}">Mon compte <small>({{app.user.firstname}})</small></a> | <a href="{{ path('app_logout') }}">Déconnexion</a>
             {% else %}
                 <a href="{{ path('app_login') }}">Connexion</a> | <a href="{{ path('register') }}">Inscription</a>
             {% endif %}
             <a href="{{ path('cart') }}">
-                <img src="{{ asset('assets/img/shopping-bag.png') }}" class="cart-icon" alt="Mon panier">
+                <img src="{{ asset('assets/img/shopping-bag.png') }}" class="cart-icon" alt="Mon panier" width="20px" height="20px">
             </a>
         </div>
+        {# <nav role="navigation">
+            <div class="menuToggle">
+              <input type="checkbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+              <ul class="menu">
+                <li><a href="{{ path('home') }}">Bio</a></li>
+                <li><a href="{{ path('products') }}">Galerie</a></li>
+                <li><a href="{{ path('exhibitions') }}">Expositions</a></li>
+                <li><a href="{{ path('contact') }}">Contact</a></li>
+              </ul>
+            </div>
+        </nav> #}
     </header>
-    <div class="title"><a href="">VINCENT LHMTE ART</a></div>
 
     <main role="main">
+        <div class="title"><a href="">VINCENT LHMTE ART</a></div>
 
-    {# {% if block('carousel') is defined %}
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
+        {# {% if block('carousel') is defined %}
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    {% for key,header in headers %}
+                        <li data-target="#myCarousel" data-slide-to="{{ key }}" {% if key == 0 %} class="active"{% endif %}></li>
+                    {% endfor %}
+                    
+                </ol>
+
+                <div class="carousel-inner">
                 {% for key,header in headers %}
-                    <li data-target="#myCarousel" data-slide-to="{{ key }}" {% if key == 0 %} class="active"{% endif %}></li>
-                {% endfor %}
-                
-            </ol>
-
-            <div class="carousel-inner">
-            {% for key,header in headers %}
-                <div class="carousel-item {% if key == 0 %}active{% endif %}" style="background:url('/uploads/{{ header.illustration }}');background-size:cover;">
-                    <div class="container">
-                        <div class="carousel-caption text-left">
-                            <h1>{{header.title}}</h1>
-                            <p>{{ header.content }}</p>
-                            <p><a class="btn btn-lg btn-info" href="{{ header.btnUrl }}" role="button">{{ header.btnTitle }}</a></p>
+                    <div class="carousel-item {% if key == 0 %}active{% endif %}" style="background:url('/uploads/{{ header.illustration }}');background-size:cover;">
+                        <div class="container">
+                            <div class="carousel-caption text-left">
+                                <h1>{{header.title}}</h1>
+                                <p>{{ header.content }}</p>
+                                <p><a class="btn btn-lg btn-info" href="{{ header.btnUrl }}" role="button">{{ header.btnTitle }}</a></p>
+                            </div>
                         </div>
                     </div>
+                {% endfor %}
                 </div>
-            {% endfor %}
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    {% endif %} #}
+        {% endif %} #}
 
-         <div class="container {#{% if block('carousel') is not defined %}mt-5{% endif %} #}"> 
+        <div class="container {#{% if block('carousel') is not defined %}mt-5{% endif %} #}"> 
 
             {% block content %}
             {% endblock %}

@@ -3,19 +3,30 @@
 {% block title %}Nous contacter - Vincent LHMTE Art{% endblock %}
 
 {% block content %}
-    <h2>Nous contacter</h2>
-    <p>N'hésitez pas à prendre contact avec notre équipe, nous vous répondrons dans les meilleures délais.</p>
-     {% for message in app.flashes('notice') %}
-            <div class="alert alert-info"> {{ message }}</div>
-    {% endfor %}
-    <div class="row">
-        <div class="col-md-8">{{ form(form) }}</div>
-        <div class="col-md-4">
-            <strong>Vincent LHMTE Art</strong>
-            <hr>
-            0606060606 <br>
-            8 Rue de MaBoutique 35000 Rennes <br>
-            allan.lelous@gmail.com
+    <div class="container-contact">
+    
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ul>
+                <li><a href="{{ path('home') }}">Bio</a></li>
+                <li><span aria-current="page">Contact</span></li>
+            </ul>
+        </nav>
+
+        <h2>Me contacter</h2>
+        <p>Vous avez une question ? Vous souhaitez un tableau unique ou une commande personnalisée ? Contactez-moi, je vous répondrai dans les meilleures délais.</p>
+        {% for message in app.flashes('notice') %}
+                <div class="alert alert-info"> {{ message }}</div>
+        {% endfor %}
+
+        <div class="container-form">
+            <div class="contact-form">{{ form(form) }}</div>
+
+            <div class="contact-info">
+                <p>VINCENT LHMTE ART</p>
+                <p>8 Rue du soleil 75000 Paris - France</p>
+                <p>Email : vincent.lhmte@gmail.com</p>
+            </div>
         </div>
+        
     </div>
 {% endblock %}
