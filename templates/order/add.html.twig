@@ -10,54 +10,56 @@
     <h2>Mon récapitulatif</h2>
     <p>Vérifier vos informations avant de payer votre commande.</p>
     <hr>
-    <div class="row">
-        <div class="col-md-6">
-            <strong>Mon addresse de livraison</strong><br>
-            <div class="form-check mt-4">
-                {{ delivery|raw }}
+    <div class="carrier-container">
+        <div class="carrier-card">
+            <div class="recap-card">
+                <strong>Mon addresse de livraison</strong><br>
+                <div class="form-check">
+                    {{ delivery|raw }}
+                </div>
             </div>
-            <hr>
-        
-            <strong>Transporteur</strong><br>
-            <div class="form-check">
-                {{ carrier.name }} <br/>
-                {{ carrier.description }} <br/>
-                {{ (carrier.price / 100)|number_format(2,',','.') }} €
+            <div class="recap-card">
+                <strong>Transporteur</strong><br>
+                <div class="form-check">
+                    {{ carrier.name }} <br/>
+                    {{ carrier.description }} <br/>
+                    {{ (carrier.price / 100)|number_format(2,',','.') }} €
+                </div>
             </div>
         </div>
-        <div class="col-md-6">
-        <div class="text-center">
-            <b>Ma commande</b><br/>
-        </div>
+        <div class="">
+            <div class="">
+                <h6>Ma commande</h6>
+            </div>
             <div class="order-summary">
             {% set total = null %}
                 {% for key,product in cart %}
-                    <div class="row {% if key>0 %}mt-2{% endif %}">
-                        <div class="col-2">
-                            <img src="/uploads/{{product.product.illustration }}" alt=" {{product.product.name}}" height="75px">
+                    <div class="cart-recap">
+                        <div>
+                            <img src="/uploads/{{product.product.illustration }}" alt=" {{product.product.name}}" class="cart-img">
                         </div>
-                        <div class="col-7 my-auto">
-                            {{product.product.name}} <br/>
-                            <small>
-                                {{ product.product.subtitle}}
-                                <br/>
-                                x {{ product.quantity }}
-                            </small>
+                        <div>
+                            {{product.product.name}} <br>
+                            Quantité : {{ product.quantity }} <br>
+                            {{ ((product.product.price * product.quantity) / 100)|number_format(2,',','.') }} €
+                            {# <small>{{ product.product.subtitle}}</small><br> #}
                         </div>
                         <div class="col-3 my-auto">
-                            {{ ((product.product.price * product.quantity) / 100)|number_format(2,',','.') }} €
                         </div>
                     </div>
                 {% set total = total + (product.product.price * product.quantity) %}
                 {% endfor %}
             </div>
-
-            <hr>
-            <strong>Sous-Total : </strong> {{ (total / 100)|number_format(2,',','.') }} €<br>
-            <strong>Livraison : </strong> {{ (carrier.price / 100)|number_format(2,',','.') }} €
-            <hr>
-            <strong>Total : </strong> {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.') }} €
-            <a class="btn btn-success btn-block mt-3" id="checkout-button">Payer |  {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.') }} €</a>
+            <div class="sub-total">
+                <div>
+                    <strong>Sous-Total : </strong> {{ (total / 100)|number_format(2,',','.') }} €<br>
+                    <strong>Livraison : </strong> {{ (carrier.price / 100)|number_format(2,',','.') }} €<br>
+                    <strong>Total : </strong> {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.') }} €
+                </div>
+                <div>
+                    <a class="admin-btn" id="checkout-button">Payer |  {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.') }} €</a>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

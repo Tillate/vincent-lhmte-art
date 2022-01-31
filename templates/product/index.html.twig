@@ -3,23 +3,39 @@
 {% block title %}Galerie - Vincent LHMTE Art{% endblock %}
 
 {% block content %}
-    <div class="">
-        <div class="filter-container">
-            <h3>Filtrer</h3>
-            {{ form(form) }}
+    <h3>Tableaux</h3>
+    {# <div class="filter-test">
+
+        <h3>Filtrer</h3>
+       
+                {{ form(form) }}   
+
         </div>
-        <div class="">
-            <h3>Tableaux</h3>
-
-
-            <div class="product-container">
-                {% for product in products %}
-                    <div class="product-card">
-                        {% include "product/single_product.html.twig" %}
-                    </div>
-
-                {% endfor %}
+    </div> #}
+    <div class="filter-container">
+        <div class="filtres">
+            <h5>Filtres</h5>
+            <img src="{{ asset('assets/img/filter.png') }}" class="" alt="Filtres" width="24px" height="24px">
+        </div>
+        
+        <div class="menuToggle2">
+            <input type="checkbox" class="filter-input" />
+            
+            <div class="menu2">
+                {{ form(form) }}
             </div>
+
+        </div>
+    </div>
+    <div class="galerie-container">
+        <div class="product-container">
+
+            {% for product in products %}
+                <div class="product-card">
+                    {% include "product/single_product.html.twig" %}
+                </div>
+            {% endfor %}
+
         </div>
     </div>
     

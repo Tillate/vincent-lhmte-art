@@ -2,12 +2,24 @@
 
 {% block content %}
 
-<h1>Inscription</h1>
+<div class="register-container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ul>
+            <li><a href="{{ path('home') }}">Bio</a></li>
+            <li><span aria-current="page">Inscription</span></li>
+        </ul>
+    </nav>
+
+    <h1>Inscription</h1>
 {% if notification %}
     <div class="alert alert-info">{{ notification }}</div>
     <hr>
 {% endif %}
+    <div class="login-form register-form">
+        {{ form(form) }}
+        <p>Déjà membre ? <a href="{{ path('app_login')}}" class="login-link">Se connecter</a>.</p>
+    </div>
 
-{{ form(form) }}
+</div>
 
 {% endblock %}
