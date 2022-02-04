@@ -23,50 +23,50 @@ class AddressType extends AbstractType
                 ]
             ])
             ->add('firstname', TextType::class, [
-                'label' => 'Votre prénom',
+                'label' => 'Prénom',
                 'attr' => [
                     'placeholder' => 'Entrez votre prénom'
                 ]
             ])
             ->add('lastname', TextType::class, [
-                'label' => 'Votre nom',
+                'label' => 'Nom',
                 'attr' => [
                     'placeholder' => 'Entrez votre nom'
                 ]
             ])
             ->add('company', TextType::class, [
-                'label' => 'Votre société',
+                'label' => 'Société',
                 'required' => false,
                 'attr' => [
                     'placeholder' => '(facultatif) Entrez le nom de votre société'
                 ]
             ])
             ->add('address', TextType::class, [
-                'label' => 'Votre adresse',
+                'label' => 'Adresse',
                 'attr' => [
                     'placeholder' => 'Entrez votre adresse'
                 ]
             ])
             ->add('postal', TextType::class, [
-                'label' => 'Votre code postal',
+                'label' => 'Code postal',
                 'attr' => [
                     'placeholder' => 'Entrez votre code postal'
                 ]
             ])
             ->add('city', TextType::class, [
-                'label' => 'Votre ville',
+                'label' => 'Ville',
                 'attr' => [
                     'placeholder' => 'Entrez votre ville'
                 ]
             ])
             ->add('country', CountryType::class, [
-                'label' => 'Votre pays',
+                'label' => 'Pays',
                 'attr' => [
                     'placeholder' => 'Entrez votre pays'
                 ]
             ])
             ->add('phone', TelType::class, [
-                'label' => 'Votre téléphone',
+                'label' => 'Numéro de téléphone',
                 'attr' => [
                     'placeholder' => 'Entrez votre n° de téléphone'
                 ]
@@ -74,7 +74,7 @@ class AddressType extends AbstractType
             ->add('submit', SubmitType::class, [
                 'label' => 'Valider mon adresse',
                 'attr' => [
-                    'class' => 'btn-block btn-info'
+                    'class' => 'admin-btn'
                 ]
             ])
         ;

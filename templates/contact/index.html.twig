@@ -14,12 +14,14 @@
 
         <h2>Me contacter</h2>
         <p>Vous avez une question ? Vous souhaitez un tableau unique ou une commande personnalisée ? Contactez-moi, je vous répondrai dans les meilleures délais.</p>
-        {% for message in app.flashes('notice') %}
-                <div class="alert alert-info"> {{ message }}</div>
-        {% endfor %}
 
         <div class="container-form">
+
             <div class="contact-form">
+                {% for message in app.flashes('notice') %}
+                        <div class="success-info"> {{ message }}</div>
+                {% endfor %}
+
                 {{ form(form) }}
             </div>
 
@@ -28,7 +30,7 @@
                 <p>8 Rue du soleil 75000 Paris - France</p>
                 <p>Email : vincent.lhmte@gmail.com</p>
             </div>
-        </div>
-        
+
+        </div> 
     </div>
 {% endblock %}

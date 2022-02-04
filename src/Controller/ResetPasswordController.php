@@ -49,15 +49,15 @@ class ResetPasswordController extends AbstractController
                     'token' => $reset_password->getToken()
                 ]);
 
-                $content = "Bonjour ".$user->getFirstName()."<br>Vous avez demandé à réinitialiser votre mot de passe sur le site Ma Boutique.<br><br>";
-                $content .="Merci de bien vouloir cliquer sur le lien suivant pour <a href='".$url."'>mettre a jour votre mot de passe</a>.";
+                $content = "Bonjour ".$user->getFirstName().","."<br><br>Vous avez demandé à réinitialiser votre mot de passe sur le site Vincent LHMTE Art.<br><br>";
+                $content .="Merci de bien vouloir cliquer sur le lien pour <a href='".$url."'>mettre à jour votre mot de passe</a>.";
 
                 $mail = new Mail();
-                $mail->send($user->getEmail(), $user->getFirstname().' '.$user->getLastName(), 'Réinitialiser votre mot de passe sur Ma Boutique', $content);
+                $mail->send($user->getEmail(), $user->getFirstname().' '.$user->getLastName(), 'Réinitialiser votre mot de passe - Vincent LHMTE Art', $content);
                 
                 $this->addFlash('notice', "Un email contenant la procédure de réinitialisation du mot de passe vous à été envoyé.");
             } else {
-                $this->addFlash('notice', "L'adresse email saisie est inconnue.");
+                $this->addFlash('notice2', "L'adresse email saisie est inconnue.");
             }
         }
         return $this->render('reset_password/index.html.twig');
@@ -77,7 +77,7 @@ class ResetPasswordController extends AbstractController
         //Vérifier si les createdAt = now - 1h
         $now = new DateTime();
         if ($now > $reset_password->getCreatedAt()->modify('+ 1 hour')) {
-            $this->addFlash('notice', 'Votre demande de mot de passe à expiré. Merci de la renouveller.');
+            $this->addFlash('notice2', 'Votre demande de mot de passe à expiré. Merci de la renouveller.');
             return $this->redirectToRoute('reset_password');
         }
 

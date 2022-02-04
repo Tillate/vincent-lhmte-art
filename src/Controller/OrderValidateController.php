@@ -40,10 +40,14 @@ class OrderValidateController extends AbstractController
 
             //Envoyer un email de confirmation de commande au client
             $mail = new Mail();
-            $content = "Bonjour ".$order->getUser()->getFirstName()."<br/>Bienvenue sur Ma Boutique de mode. <br><br/> Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quis?";
-            $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstName(), 'Votre commande sur Ma Boutique est bien validée.', $content);
+            $content = "Bonjour ".$order->getUser()->getFirstName()." ".$order->getUser()->getLastName()."
+            <br><br> Merci pour votre commande.
+            <br><br> Vous serez informé de l'avancement de la préparation et de la livraison de votre commande par email.
+            <br><br> Vous pouvez retrouver le détail de votre commande dans votre compte, onglet 'Mes commandes'.
+            <br><br> A très bientôt sur Vincent LHMTE Art. ";
+            $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstName(), 'Confirmation de Commande -  Vincent LHMTE Art.', $content);
         }
-        //Afficher les information de la commande de l'utilisateur
+        //Afficher les informations de la commande de l'utilisateur
 
         return $this->render('order_validate/index.html.twig', [
             'order' => $order

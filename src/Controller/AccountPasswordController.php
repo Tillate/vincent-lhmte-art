@@ -29,6 +29,8 @@ class AccountPasswordController extends AbstractController
     public function index(Request $request, UserPasswordHasherInterface $passwordHasher): Response
     {
         $notification = null;
+        $notificationError = null;
+
         $user = $this->getUser();
         $form=$this->createForm(ChangePasswordType::class, $user);
 
@@ -48,13 +50,14 @@ class AccountPasswordController extends AbstractController
                 $notification = "Votre mot de passe a été mis à jour.";
 
             } else {
-                $notification = "Le mot de passe saisi est invalide.";
+                $notificationError = "Le mot de passe saisi est invalide.";
             }
         }
 
         return $this->render('account/password.html.twig', [
             'form' => $form->createView(),
-            'notification' => $notification
+            'notification' => $notification,
+            'notificationError' => $notificationError,
         ]);
     }
 }

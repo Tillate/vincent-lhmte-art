@@ -4,15 +4,20 @@
 
 {% block content %}
 
-    <div class="block-small">
-        <h1 class="h3 mb-3 font-weight-normal">Réinitialiser mon mot de passe</h1>
+    <div class="login-form account-form">
+    
+        <h1>Réinitialiser mon mot de passe</h1>
+
         {% for message in app.flashes('notice') %}
-            <div class="alert alert-info"> {{ message }}</div>
+            <div class="success-info"> {{ message }}</div>
         {% endfor %}
-        {% for message in app.flashes('notice') %}
-            <div class="alert alert-info"> {{ message }}</div>
+
+        {% for message in app.flashes('notice2') %}
+            <div class="alert-info"> {{ message }}</div>
         {% endfor %}
+
         {{ form(form) }}
+
     </div>
 
 {% endblock %}

@@ -4,14 +4,15 @@
 
 {% block content %}
     <h2>Confirmation de commande</h2>
-    <p>
-        Merci pour votre commande <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong>,<br><br>
-        Nous vous remercions pour votre commande n°<strong>{{ order.reference }}</strong>.<br>
-        Un email de confirmation vous sera envoyé à l'adresse email suivante : <strong> {{ order.user.email }}</strong>. 
-        <hr>
-        Votre commande sera livrée par {{ order.carrierName }} à l'adresse suivante : <br>
-        {{ order.delivery|raw }}
-        <hr>
-        Pour suivre votre commande, rendez-vous dans votre <a href="{{ path('account_order') }}">compte</a>.
-    </p>
+    <p class="mb15">Merci pour votre commande <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong>,</p>
+    <p  class="mb15">Nous vous remercions pour votre commande n°<strong>{{ order.reference }}</strong>.</p>
+    <p  class="mb15">Un email de confirmation vous sera envoyé à l'adresse email suivante : <strong> {{ order.user.email }}</strong>.</p>
+    
+    
+    <p  class="mb15">Votre commande sera livrée par {{ order.carrierName }} à l'adresse suivante : </p>
+    <p class="mb15 order-validate-address"><strong>{{ order.delivery|raw }}</strong></p>
+    
+
+    <p>Pour suivre votre commande, rendez-vous dans votre <a href="{{ path('account_order') }}" class="link-underline">compte</a>.</p>    
+    
 {% endblock %}

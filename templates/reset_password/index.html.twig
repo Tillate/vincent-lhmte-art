@@ -4,22 +4,28 @@
 
 {% block content %}
 
-    <div class="block-small">
+    <h1>Réinitialiser mon mot de passe</h1>
+
+    <form method="post" class="login-form account-form">
+
         {% for message in app.flashes('notice') %}
-            <div class="alert alert-info"> {{ message }}</div>
+            <div class="success-info"> {{ message }}</div>
         {% endfor %}
-        <form method="post">
-            <h1 class="h3 mb-3 font-weight-normal">Réinitialiser mon mot de passe</h1>
-            <label for="inputEmail" placeholder="Votre adresse email">Votre email</label>
-            <input type="email" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-        
-            <button class="btn btn-info btn-block mt-3" type="submit">
-                Valider
-            </button>
-            <hr>
-            <p class="text-center">Ou souhaitez-vous <a href="{{ path('app_login')}}">Vous connecter</a>?</p>
-        </form>
-    </div>
+
+        {% for message in app.flashes('notice2') %}
+            <div class="alert-info"> {{ message }}</div>
+        {% endfor %}
+
+        <p>Saissez votre email et je vous enverrai un lien pour réinitialiser votre mot de passe.</p>
+
+        <label for="inputEmail" placeholder="Votre adresse email">Votre email</label>
+        <input type="email" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+    
+        <button class="admin-btn" type="submit">Réinitialiser le mot de passe</button>
+
+        <p>Ou souhaitez-vous <a href="{{ path('app_login')}}" class="link-underline" >vous connecter</a>?</p>
+
+    </form>
 
 {% endblock %}
 

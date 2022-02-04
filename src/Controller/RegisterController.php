@@ -28,6 +28,7 @@ class RegisterController extends AbstractController
     public function index(Request $request, ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher)
     {
         $notification = null;
+        $notificationError = null;
 
         $user = new User();
         $form = $this->createForm(RegisterType::class, $user);
@@ -50,18 +51,21 @@ class RegisterController extends AbstractController
                 $this->entityManager->flush();
 
                 $mail = new Mail();
-                $content = "Bonjour ".$user->getFirstName()."<br/>Bienvenue sur Ma Boutique de mode. <br><br/> Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quis?";
-                $mail->send($user->getEmail(), $user->getFirstName(), 'Bienvenue sur Ma Boutique', $content);
+                $content = "Bonjour <b>".$user->getFirstName()." ".$user->getLastName()."</b>,"."
+                <br><br>Bienvenue sur Vincent LHMTE Art.
+                <br><br>Votre inscription s'est correctement déroulée. Vous pouvez-désormais accéder à votre compte en utilisant vos identifiants.";
+                $mail->send($user->getEmail(), $user->getFirstName(), "Confirmation d'inscription - Vincent LHMTE Art", $content);
 
                 $notification = "Votre inscription s'est correctement déroulée. Vous pouvez dès à présent vous connecter à votre compte.";
             } else {
-                $notification = "L'email que vous avez renseigné existe déjà.";
+                $notificationError = "L'email que vous avez renseigné existe déjà.";
             }
         }
 
         return $this->render('register/index.html.twig', [
             'form' => $form->createView(),
-            'notification' => $notification
+            'notification' => $notification,
+            'notificationError' => $notificationError
         ]);
     }
 }

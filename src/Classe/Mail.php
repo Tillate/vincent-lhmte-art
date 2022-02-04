@@ -18,7 +18,7 @@ class Mail
                 [
                     'From' => [
                         'Email' => "allan.lelous@gmail.com",
-                        'Name' => "Ma Boutique"
+                        'Name' => "Vincent LHMTE Art"
                     ],
                     'To' => [
                         [

@@ -30,28 +30,28 @@ class ChangePasswordType extends AbstractType
                 'label' => 'Mon nom'
             ])
             ->add('old_password', PasswordType::class, [
-                'label' => 'Mon mot de passe actuel',
+                'label' => 'Mot de passe actuel',
                 'mapped' => false,
                 'attr' => [
-                    'placeholder' => 'Veuillez saisir votre mot de passe actuel'
+                    'placeholder' => 'Saisissez votre mot de passe actuel'
                 ]
             ])
             ->add('new_password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'mapped' => false,
                 'invalid_message' => 'Le mot de passe et la confirmation doivent être identique',
-                'label' => 'Mon nouveau mot de passe',
+                'label' => 'Nouveau mot de passe',
                 'required' => true,
                 'first_options' => [ 
                     'label' => 'Mon nouveau mot de passe',
                     'attr' => [
-                        'placeholder' => 'Merci de saisir votre nouveau mot de passe'
+                        'placeholder' => 'Nouveau mot de passe'
                     ]
                 ],
                 'second_options' => [
                     'label' => 'Confirmez votre nouveau mot de passe',
                     'attr' => [
-                        'placeholder' => 'Merci de confirmer votre nouveau mot de passe'
+                        'placeholder' => 'Confirmez le nouveau mot de passe'
                     ]
                 ],
             ])

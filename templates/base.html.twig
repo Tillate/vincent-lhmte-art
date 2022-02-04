@@ -54,7 +54,15 @@
         </nav> #}
         <div class="cart-link">
             {% if app.user %}
-                <a href="{{ path('account') }}">Mon compte <small>({{app.user.firstname}})</small></a> | <a href="{{ path('app_logout') }}">Déconnexion</a>
+                <a href="{{ path('account') }}"><img src="{{ asset('assets/img/account.png') }}" class="account-logo" alt="Logo account">
+                    <span class="account-link">Mon compte </span>
+                    <small>({{app.user.firstname}})</small>
+                </a> 
+                | 
+                <a href="{{ path('app_logout') }}"><img src="{{ asset('assets/img/logout1.png') }}" class="account-logo" alt="Logo account">
+                    <span class="account-link">Déconnexion</span>
+                </a>
+                {# <a href="{{ path('account') }}">Mon compte <small>({{app.user.firstname}})</small></a> | <a href="{{ path('app_logout') }}">Déconnexion</a> #}
             {% else %}
                 <a href="{{ path('app_login') }}">Connexion</a> | <a href="{{ path('register') }}">Inscription</a>
             {% endif %}
