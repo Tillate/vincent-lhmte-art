@@ -7,18 +7,19 @@
 
         <div class="product-image-container">
                 <div class="img-product">
-                    <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="single-product-img">
+                    <img src="/uploads/boardimg/{{ product.illustration }}" id="current" alt="{{ product.name }}" class="single-product-img">
                 </div>
 
                 <div class="product-image-galerie">
-                    <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" width="85px" height="85px">
-                    <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" width="85px" height="85px">
+                    <img src="/uploads/boardimg/{{ product.illustration }}" class="thumbnail" alt="{{ product.name }}" width="85px" height="85px">
+                    <img src="/uploads/boardimg/{{ product.illustration2 }}" class="thumbnail" alt="{{ product.name }}" width="85px" height="85px">
+                    <img src="/uploads/boardimg/{{ product.illustration3 }}" class="thumbnail" alt="{{ product.name }}" width="85px" height="85px">
                 </div>
         </div>
 
         <div class="single-product-description">
             <h2>{{ product.name }} </h2>
-            <p>{{ product.description }}</p>
+            <p> {{ product.description }}</p>
 
             <p>Dimensions : {{ product.subtitle }}</p>
             <p>Peinture acrylique sur toile sur châssis entoilé en lin. Prête à être accrochée.</p>
@@ -39,6 +40,31 @@
             </div>
         {% endfor %}
     </div> #}
-    
+    <script>
+
+        //Script Galerie Photos
+        const current = document.getElementById('current');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+
+        thumbnails[0].style.opacity = 0.6;
+
+        for (let i = 0; i < thumbnails.length; i++){
+        thumbnails[i].addEventListener('click', show);
+        };
+
+        function show() {
+        thumbnails.forEach(function (img){
+            img.style.opacity = 1;
+        })
+        let imgSource = this.getAttribute('src');
+        current.setAttribute('src', imgSource);
+        current.classList.add('fade-in');
+        this.style.opacity = 0.6;
+        setTimeout (function (){
+            current.classList.remove('fade-in');
+        },300);
+        }
+
+    </script>
 
 {% endblock %}

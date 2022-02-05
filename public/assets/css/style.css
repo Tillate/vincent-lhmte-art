@@ -1085,14 +1085,16 @@ form {
     /* width: 100%; */
     /* height: 100%; */
 }
-/* .product-image-galerie {
-    align-self: baseline;
-} */
+
 
 .single-product-img {
     object-fit: cover;
     height: 100%;
     width: 100%;
+}
+
+.product-image-galerie img {
+    object-fit: cover;
 }
 
 .single-product-description {
@@ -1125,3 +1127,15 @@ form {
         margin-left: 20px;
     }
 }
+
+/* Script Galerie Photo */
+@keyframes fadeIn {
+    to {
+      opacity:1;
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.4s ease-in 1 forwards;
+  }

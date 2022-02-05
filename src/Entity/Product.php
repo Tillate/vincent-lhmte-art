@@ -58,6 +58,16 @@ class Product
      */
     private $isBest;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $illustration2;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $illustration3;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -155,6 +165,30 @@ class Product
     public function setIsBest(bool $isBest): self
     {
         $this->isBest = $isBest;
+
+        return $this;
+    }
+
+    public function getIllustration2(): ?string
+    {
+        return $this->illustration2;
+    }
+
+    public function setIllustration2(?string $illustration2): self
+    {
+        $this->illustration2 = $illustration2;
+
+        return $this;
+    }
+
+    public function getIllustration3(): ?string
+    {
+        return $this->illustration3;
+    }
+
+    public function setIllustration3(?string $illustration3): self
+    {
+        $this->illustration3 = $illustration3;
 
         return $this;
     }
