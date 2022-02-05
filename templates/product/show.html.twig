@@ -3,22 +3,33 @@
 {% block title %}{{ product.name }} - Vincent LHMTE Art{% endblock %}
 
 {% block content %}
-    <div class="">
+    <div class="single-product-container">
 
-        <div class="">
-                <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" width="300px" height="400px">
+        <div class="product-image-container">
+                <div class="img-product">
+                    <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="single-product-img">
+                </div>
+
+                <div class="product-image-galerie">
+                    <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" width="85px" height="85px">
+                    <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" width="85px" height="85px">
+                </div>
         </div>
 
-        <div class="">
-            <h3>{{ product.name }} </h3>
-            <p>{{ product.subtitle }}</p>
-            <span class="product-page-price">{{ (product.price / 100)|number_format(2, ',', '.') }} €</span>
-            <hr>
+        <div class="single-product-description">
+            <h2>{{ product.name }} </h2>
             <p>{{ product.description }}</p>
-            <a href="{{ path('add-to-cart', { 'id': product.id })}}" class="add-cart">Ajouter au panier</a>
+
+            <p>Dimensions : {{ product.subtitle }}</p>
+            <p>Peinture acrylique sur toile sur châssis entoilé en lin. Prête à être accrochée.</p>
+            <hr>
+            <div class="product-page-price">
+                <span>{{ (product.price / 100)|number_format(2, ',', '.') }} €</span>
+                <a href="{{ path('add-to-cart', { 'id': product.id })}}" class="admin-btn">Ajouter au panier</a>
+            </div>
         </div>
     </div>
-    <hr>
+    {# <hr>
     <h3>Nos meilleurs ventes</h3>
     <p>Decouvrez les articles les plus vendus.</p>
     <div class="">
@@ -27,7 +38,7 @@
                 {% include "product/single_product.html.twig" %}
             </div>
         {% endfor %}
-    </div>
+    </div> #}
     
 
 {% endblock %}

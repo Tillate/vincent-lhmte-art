@@ -7,7 +7,7 @@
     <p>Choisissez vos préférences avant de passer votre commande sur Vincent LHMTE Art</p>
 
     <div class="carrier-container">
-        <div class="">
+        <div>
             {% set formHtml %}
                 {{ form_start(form, {action:path('order_recap')}) }}
                     {{ form_label(form.addresses, 'Choisissez votre adresse de livraison')}}
@@ -15,27 +15,28 @@
                 {{ form_end(form) }}
             {% endset %}
 
-        {{ formHtml|replace({'[br]' : '<br/>'})|raw }}
+            {{ formHtml|replace({'[br]' : '<br/>'})|raw }}
         </div>
-        <div class="col-md-6">
-            <div class="text-center">
+        <div>
+            <div>
                 <b>Récap de ma commande</b><br/>
                 <p>Retrouver le récapitulatif de votre panier</p>
             </div>
             <div class="order-summary">
                 {% for key,product in cart %}
+
                     <div class="cart-recap">
-                        <div class="">
+                        <div>
                             <img src="/uploads/{{product.product.illustration }}" alt=" {{product.product.name}}" class="cart-img">
                         </div>
-                        <div class="">
+                        <div>
                             {{product.product.name}} <br/>
                             {{ (product.product.price / 100)|number_format(2,',','.') }} € <br/>
                            {# Description : <small>{{ product.product.subtitle}}</small> #}
                            Quantité : {{ product.quantity }}
                         </div>
-                        
                     </div>
+
                 {% endfor %}
             </div>
         </div>
