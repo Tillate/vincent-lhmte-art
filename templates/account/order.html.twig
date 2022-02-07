@@ -3,6 +3,16 @@
 {% block title %}Mes commandes - Vincent LHMTE Art{% endblock %}
 
 {% block content %}
+    <div class="ariane">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ul>
+                <li><a href="{{ path('account') }}">Mon compte</a></li>
+                <li><span aria-current="page">Mes commandes</span></li>
+            </ul>
+        </nav>
+    </div>
+
+
     <h1>Mes commandes</h1>
     <a href="{{ path('account') }}" class="link-underline mb15">Retour</a>
     <p>C'est dans cet espace que vous pourrez gérer toutes vos commandes.</p>
@@ -72,7 +82,7 @@
                         <span>{{ ((order.carrierPrice + order.getTotal) / 100)|number_format(2, ',', '.') }} €</span>
                     </div>
                     <div class="order-card-info order-card-btn">
-                        <a href="{{ path('account_order_show', { 'reference': order.reference }) }}" class="admin-btn order-btn">Voir ma commande</a>
+                        <a href="{{ path('account_order_show', { 'reference': order.reference }) }}" class="admin-btn order-btn">Détails</a>
                     </div>
                 </div>
             {% endfor %}

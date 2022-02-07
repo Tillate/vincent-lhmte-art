@@ -3,6 +3,16 @@
 {% block title %}Ma commande - Vincent LHMTE Art{% endblock %}
 
 {% block content %}
+    <div class="ariane">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ul>
+                <li><a href="{{ path('account') }}">Mon compte</a></li>
+                <li><a href="{{ path('account_order') }}">Mes commandes</a></li>
+                <li><span aria-current="page">Détails</span></li>
+            </ul>
+        </nav>
+    </div>
+
     <h1>Ma commande {{ order.reference }}</h1>
     <a href="{{ path('account_order') }}" class="link-underline">Retour</a>
     

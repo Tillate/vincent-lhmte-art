@@ -3,8 +3,15 @@
 {% block title %}{{ product.name }} - Vincent LHMTE Art{% endblock %}
 
 {% block content %}
+        <div class="ariane">
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <ul>
+                    <li><a href="{{ path('products') }}">Galerie</a></li>
+                    <li><span aria-current="page">{{ product.name }}</span></li>
+                </ul>
+            </nav>
+        </div>
     <div class="single-product-container">
-
         <div class="product-image-container">
                 <div class="img-product">
                     <img src="/uploads/boardimg/{{ product.illustration }}" id="current" alt="{{ product.name }}" class="single-product-img">
@@ -30,6 +37,8 @@
             </div>
         </div>
     </div>
+
+    {# Bandeau des Meilleurs ventes #}
     {# <hr>
     <h3>Nos meilleurs ventes</h3>
     <p>Decouvrez les articles les plus vendus.</p>

@@ -19,7 +19,7 @@
         {% endif %}
 
         {% for message in app.flashes('notice') %}
-            <div class="text-alert"> {{ message }}</div>
+            <div class="success-info"> {{ message }}</div>
         {% endfor %}
 
         {% if app.user %}

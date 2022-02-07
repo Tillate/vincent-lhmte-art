@@ -1,6 +1,9 @@
 <div class="product-item">
     <a href="{{ path('product', { 'slug' : product.slug}) }}">
-        <img src="/uploads/boardimg/{{ product.illustration }}" alt="{{ product.name }}" class="card-img">
+        <img src="/uploads/boardimg/{{ product.illustration }}" alt="{{ product.name }}" class="card-img"
+        onmouseover="this.src='/uploads/boardimg/{{ product.illustration2 }}';"
+        onmouseout="this.src='/uploads/boardimg/{{ product.illustration }}';"
+        >
     </a>
         <h5>{{ product.name }}</h5>
         {# <div class="product-subtitle">{{ product.subtitle }}</div> #}
@@ -9,3 +12,7 @@
             <a href="{{ path('add-to-cart', { 'id': product.id })}}" class="add-cart">Ajouter au panier</a>
         </span>
 </div>
+
+
+
+

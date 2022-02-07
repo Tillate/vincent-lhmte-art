@@ -512,8 +512,10 @@ footer a:hover {
     margin-bottom: 150px;
 }
 
-
-
+.img-product {
+    height: 100%;
+    width: 100%;
+}
 
 
 .card-img {
@@ -522,7 +524,17 @@ footer a:hover {
     width: 100%;
     height: 400px;
     max-width: 300px;
+    
 }
+
+.card-img:hover {
+    animation: 0.8s ease fade;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 
 .product-item h5 {
     text-transform: uppercase;
@@ -1082,7 +1094,7 @@ form {
     gap: 5px;
     max-width: 450px;
     max-height: 750px;
-    /* width: 100%; */
+    width: 50%;
     /* height: 100%; */
 }
 
@@ -1091,6 +1103,11 @@ form {
     object-fit: cover;
     height: 100%;
     width: 100%;
+    /* max-width: 450px; */
+    max-width: 400px;
+    /* max-height: 500px; */
+    max-height: 550px;
+    border-radius: 3px;
 }
 
 .product-image-galerie img {
@@ -1100,7 +1117,8 @@ form {
 .single-product-description {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
+    width: 50%;
     max-width: 450px;
     gap: 20px;
 }
@@ -1139,3 +1157,9 @@ form {
     opacity: 0;
     animation: fadeIn 0.4s ease-in 1 forwards;
   }
+
+
+.ariane {
+    max-width: 1290px;
+    width: 100%;
+}
