@@ -1094,7 +1094,7 @@ form {
     gap: 5px;
     max-width: 450px;
     max-height: 750px;
-    width: 50%;
+    /* width: 50%; */
     /* height: 100%; */
 }
 
@@ -1102,23 +1102,28 @@ form {
 .single-product-img {
     object-fit: cover;
     height: 100%;
-    width: 100%;
-    /* max-width: 450px; */
-    max-width: 400px;
+    /* width: 100%; */
+    max-width: 300px;
+    /* max-width: 400px; */
     /* max-height: 500px; */
     max-height: 550px;
     border-radius: 3px;
 }
 
+.product-image-galerie img:hover{
+    cursor: pointer;
+    
+}
 .product-image-galerie img {
     object-fit: cover;
+    
 }
 
 .single-product-description {
     display: flex;
     flex-direction: column;
     /* width: 100%; */
-    width: 50%;
+    /* width: 50%; */
     max-width: 450px;
     gap: 20px;
 }
@@ -1130,6 +1135,12 @@ form {
     margin-left: 15px;
 }
 
+@media only screen and (min-width: 768px) {
+    .single-product-img {
+        max-width: 450px;
+    }
+
+}
 @media only screen and (min-width: 1024px) {
     .single-product-container {
         flex-direction: row ;
@@ -1157,9 +1168,21 @@ form {
     opacity: 0;
     animation: fadeIn 0.4s ease-in 1 forwards;
   }
-
-
+  
 .ariane {
     max-width: 1290px;
     width: 100%;
+}
+
+/* ********** MENTIONS LEGALES *********** */
+
+.container-mentions p {
+    margin: 20px 0;
+    line-height: 20px;
+}
+
+.container-mentions h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 25px;
 }

@@ -31,7 +31,7 @@ class ContactController extends AbstractController
             $content = "Bonjour,<br>
             Vous avez reçus un message de <strong>".$form->getData()['prenom']." ".$form->getData()['nom']."
             </strong><br><br>Adresse email : <strong>".$form->getData()['email']."</strong>
-            <br><br>Message :<br> ".$form->getData()['content']."</br></br>";             
+            <br><br>Message :<br> ".$form->getData()['content']."<br><br>";             
             $mail = new Mail();
             $mail->send('allan.lelous@gmail.com', 'Admin - Vincent LHMTE Art', 'Demande de contact', $content);
 
