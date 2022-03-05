@@ -14,8 +14,6 @@
         <h1>Mon panier</h1>
         <p>Retrouvez l'ensemble des produits que vous avez ajouté à votre panier.</p>
     
-    
-
     {% if cart|length >0 %}
     <table class="cart-tab">
         <thead>
@@ -68,8 +66,8 @@
     </table>
 
     <div class="cart-total">
-        <p><b>Nombre de produits :{{ totalQuantity }}</b> </p>
-        <p><b>Total de mon panier : {{ (total / 100)|number_format(2,',','.') }} €</b> </p>   
+        <p>Nombre de produits : {{ totalQuantity }}</p>
+        <p>Total de mon panier : {{ (total / 100)|number_format(2,',','.') }} €</p>   
         <a href="{{ path('order') }}" class="admin-btn cart-btn">Valider mon panier</a>
     </div>
     {% else %}

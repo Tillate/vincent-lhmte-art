@@ -10,12 +10,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CartController extends AbstractController
 {
-    private $entityManager;
+    // private $entityManager;
 
-    public function __construct(EntityManagerInterface $entityManager)
-    {
-        $this->entityManager = $entityManager;
-    }
+    // public function __construct(EntityManagerInterface $entityManager)
+    // {
+    //     $this->entityManager = $entityManager;
+    // }
 
     /**
      * @Route("/mon-panier", name="cart")
@@ -32,7 +32,7 @@ class CartController extends AbstractController
      */
     public function add(Cart $cart,$id): Response
     {   
-        $cart->add($id);
+        $cart->add($id); //Appel de la fonction add($id) dans la classe cart
 
         return $this->redirectToRoute('cart');
     }
@@ -42,7 +42,7 @@ class CartController extends AbstractController
      */
     public function remove(Cart $cart): Response
     {   
-        $cart->remove();
+        $cart->remove(); //Appel de la fonction remove() dans la classe cart
 
         return $this->redirectToRoute('products');
     }
@@ -52,7 +52,7 @@ class CartController extends AbstractController
      */
     public function delete(Cart $cart, $id): Response
     {   
-        $cart->delete($id);
+        $cart->delete($id); //Appel de la fonction delete($id) dans la classe cart
 
         return $this->redirectToRoute('cart');
     }
@@ -62,7 +62,7 @@ class CartController extends AbstractController
      */
     public function decrease(Cart $cart, $id): Response
     {   
-        $cart->decrease($id);
+        $cart->decrease($id); //Appel de la fonction decrease($id) dans la classe cart
 
         return $this->redirectToRoute('cart');
     }

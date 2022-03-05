@@ -38,7 +38,7 @@ class StripeController extends AbstractController
                     'unit_amount' => $product->getPrice(),
                     'product_data' => [
                         'name' => $product->getProduct(),
-                        'images' => [$YOUR_DOMAIN."/uploads/".$product_object->getIllustration()],
+                        'images' => [$YOUR_DOMAIN."/uploads/boardimg/".$product_object->getIllustration()],
                     ],
                 ],
                 'quantity' => $product->getQuantity(),

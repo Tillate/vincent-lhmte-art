@@ -10,9 +10,7 @@
         <hr>
 
         {% if app.user.addresses|length == 0 %}
-        <p class="text-center">
-            Vous n'avez pas encore ajouté d'adresse dans votre comptre client. Pour en ajouter une, veuillez <a href="{{ path('account_address_add')}}">cliquer ici</a>
-        </p>
+        <p class="text-center">Vous n'avez pas encore ajouté d'adresse dans votre comptre client.</p>
         {% else %}
         <div class="address-card-container">
             {% for address in app.user.addresses %}

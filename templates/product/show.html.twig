@@ -49,8 +49,8 @@
             </div>
         {% endfor %}
     </div> #}
+    {% block javascript %}
     <script>
-
         //Script Galerie Photos
         const current = document.getElementById('current');
         const thumbnails = document.querySelectorAll('.thumbnail');
@@ -73,7 +73,6 @@
             current.classList.remove('fade-in');
         },300);
         }
-
     </script>
-
+    {% endblock %}
 {% endblock %}

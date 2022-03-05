@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Classe\Mail;
 use App\Entity\Order;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
@@ -52,7 +53,17 @@ class OrderCrudController extends AbstractCrudController
         $order->setState(2);
         $this->entityManager->flush();
 
-        $this->addFlash('notice', "<span style='color:green;'><strong>La commande ".$order->getReference()."est <u>en cours de préparation</u></strong></span>");
+        //Message flash information livraison
+        $this->addFlash('notice', "<span style='color:orange;'><strong>La commande ".$order->getReference()." est <u>en cours de préparation</u></strong></span>");
+
+        //Mail de préparation de la commande
+        $mail = new Mail();
+        $content = "Bonjour ".$order->getUser()->getFirstName()." ".$order->getUser()->getLastName()."
+        <br><br> Votre commande n°".$order->getReference()." est actuellement en cours de préparation.
+        <br><br> Vous serez informé de l'expédition de votre commande par email.
+        <br><br> Vous pouvez retrouver le détail de votre commande dans votre compte, onglet 'Mes commandes'.
+        <br><br> A très bientôt sur Vincent LHMTE Art. ";
+        $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstName(), 'Préparation de votre commande en cours -  Vincent LHMTE Art.', $content);
 
         $routeBuilder = $this->get(AdminUrlGenerator::class);
  
@@ -65,8 +76,16 @@ class OrderCrudController extends AbstractCrudController
         $order->setState(3);
         $this->entityManager->flush();
 
-        $this->addFlash('notice', "<span style='color:orange;'><strong>La commande ".$order->getReference()."est <u>en cours de livraison</u></strong></span>");
-
+        $this->addFlash('notice', "<span style='color:green;'><strong>La commande ".$order->getReference()." est <u>en cours de livraison</u></strong></span>");
+        
+        //Mail d'expédition de la commande
+        $mail = new Mail();
+        $content = "Bonjour ".$order->getUser()->getFirstName()." ".$order->getUser()->getLastName()."
+        <br><br> Bonne nouvelle : votre commande n°".$order->getReference()." vient d’être expédiée !
+        <br><br> J'espère de tout cœur que votre commande vous plaira.
+        <br><br> Vous pouvez retrouver le détail de votre commande dans votre compte, onglet 'Mes commandes'.
+        <br><br> A très bientôt sur Vincent LHMTE Art. ";
+        $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstName(), "Confirmation d'expédition de votre commande -  Vincent LHMTE Art.", $content);
         $routeBuilder = $this->get(AdminUrlGenerator::class);
  
         return $this->redirect($routeBuilder->setController(OrderCrudController::class)->setAction('index')->generateUrl());

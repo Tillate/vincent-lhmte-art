@@ -34,7 +34,7 @@ class OrderType extends AbstractType
             ])
 
             ->add('submit', SubmitType::class, [
-                'label' => 'Valider ma commande',
+                'label' => 'Valider mes options de livraison',
                 'attr' => [
                     'class' => 'admin-btn'
                 ]

@@ -40,8 +40,8 @@ class OrderValidateController extends AbstractController
 
             //Envoyer un email de confirmation de commande au client
             $mail = new Mail();
-            $content = "Bonjour ".$order->getUser()->getFirstName()." ".$order->getUser()->getLastName()."
-            <br><br> Merci pour votre commande.
+            $content = "Bonjour ".$order->getUser()->getFirstName()." ".$order->getUser()->getLastName().",
+            <br><br> Merci pour votre commande n°".$order->getReference().".
             <br><br> Vous serez informé de l'avancement de la préparation et de la livraison de votre commande par email.
             <br><br> Vous pouvez retrouver le détail de votre commande dans votre compte, onglet 'Mes commandes'.
             <br><br> A très bientôt sur Vincent LHMTE Art. ";

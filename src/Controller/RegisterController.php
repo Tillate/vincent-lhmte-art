@@ -37,18 +37,22 @@ class RegisterController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            //On récupère la data du formulaire
             $user = $form->getData();
 
-            $search_email = $this->entityManager->getRepository(User::class)->findOneByEmail($user->getEmail());
+            // On verifie si l'email existe déjà dans la base de donnée
+            $search_email = $this->entityManager->getRepository(User::class)->findOneByEmail($user->getEmail()); 
             
+            //Si l'email n'existe pas encore on continue
             if (!$search_email) {
-                $password = $passwordHasher->hashPassword($user,$user->getPassword());
+                //On récupère le password saisie avec la fonction getPassword() puis on utilise la fonction hashPassword pour le crypter
+                $password = $passwordHasher->hashPassword($user,$user->getPassword()); 
 
-                $user->setPassword($password);
+                $user->setPassword($password); //On set le password 
     
                 $this->entityManager = $doctrine->getManager();
-                $this->entityManager->persist($user);
-                $this->entityManager->flush();
+                $this->entityManager->persist($user); //On fige la donnée avant le flush
+                $this->entityManager->flush(); //On flush la donnée dans la base de données
 
                 $mail = new Mail();
                 $content = "Bonjour <b>".$user->getFirstName()." ".$user->getLastName()."</b>,"."

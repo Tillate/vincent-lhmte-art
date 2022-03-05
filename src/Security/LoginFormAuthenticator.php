@@ -28,6 +28,8 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
         $this->urlGenerator = $urlGenerator;
     }
 
+    // Le passport d'authentification contient 3 parametres :
+    // le UserBadge (identifiant) = email, le mot de passe, puis le badge Csrf
     public function authenticate(Request $request): Passport
     {
         $email = $request->request->get('email', '');
@@ -42,7 +44,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
             ]
         );
     }
-
+    //Si l'authentification est correct, redirection vers la page account
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {

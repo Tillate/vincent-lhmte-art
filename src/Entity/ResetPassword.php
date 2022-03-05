@@ -25,6 +25,7 @@ class ResetPassword
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $token;
 
@@ -55,7 +56,7 @@ class ResetPassword
         return $this->token;
     }
 
-    public function setToken(string $token): self
+    public function setToken($token): self
     {
         $this->token = $token;
 

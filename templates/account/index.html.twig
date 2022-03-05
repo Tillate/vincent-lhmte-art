@@ -4,12 +4,12 @@
 
 {% block content %}
     <h1>Mon compte</h1>
+    
     {% if is_granted('ROLE_ADMIN') %}
     <p class="admin-text">Vous êtes un administrateur : </p>
     <a href="/admin" class="admin-btn">Accéder au back-office</a>
     {% endif %}
 
-    
     
     <p class="admin-text">Bonjour {{ app.user.firstname }} {{ app.user.lastname }} (vous n’êtes pas {{ app.user.firstname }} {{ app.user.lastname }} ? <a href="{{ path('app_logout') }}" class="link-underline">Déconnexion</a>) .</p>
     <div class="account-container">

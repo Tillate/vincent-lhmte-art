@@ -5,12 +5,11 @@
         onmouseout="this.src='/uploads/boardimg/{{ product.illustration }}';"
         >
     </a>
-        <h5>{{ product.name }}</h5>
-        {# <div class="product-subtitle">{{ product.subtitle }}</div> #}
-        <p class="product-price">{{ (product.price / 100)|number_format(2, ',') }} €</p>
-        <span>
-            <a href="{{ path('add-to-cart', { 'id': product.id })}}" class="add-cart">Ajouter au panier</a>
-        </span>
+
+    <h5>{{ product.name }}</h5>
+    {# <div class="product-subtitle">{{ product.subtitle }}</div> #}
+    <p class="product-price">{{ (product.price / 100)|number_format(2, ',') }} €</p>
+    <span><a href="{{ path('add-to-cart', { 'id': product.id })}}" class="add-cart">Ajouter au panier</a></span>
 </div>
 
 

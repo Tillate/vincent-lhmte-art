@@ -50,7 +50,7 @@ class ResetPasswordController extends AbstractController
                 ]);
 
                 $content = "Bonjour ".$user->getFirstName().","."<br><br>Vous avez demandé à réinitialiser votre mot de passe sur le site Vincent LHMTE Art.<br><br>";
-                $content .="Merci de bien vouloir cliquer sur le lien pour <a href='".$url."'>mettre à jour votre mot de passe</a>.";
+                $content .="Merci de bien vouloir cliquer sur le lien pour <a href='http://127.0.0.1:8000".$url."'>mettre à jour votre mot de passe</a>.";
 
                 $mail = new Mail();
                 $mail->send($user->getEmail(), $user->getFirstname().' '.$user->getLastName(), 'Réinitialiser votre mot de passe - Vincent LHMTE Art', $content);
@@ -92,7 +92,11 @@ class ResetPasswordController extends AbstractController
             $password = $passwordHasher->hashPassword($reset_password->getUser(), $new_pwd);
             $reset_password->getUser()->setPassword($password);
 
-            //Flush en base de donnée.
+            //Supprimer le token
+            $reset_password->setToken(null);
+            
+            //On fige la donnée et on Flush en base de données.
+            $this->entityManager->persist($reset_password);
             $this->entityManager->flush();
 
             //Redirection de l'utilisateur vers la page de connexion.

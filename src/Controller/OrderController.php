@@ -51,7 +51,7 @@ class OrderController extends AbstractController
             'user' => $this->getUser()
         ]);
 
-        $form->handleRequest($request);
+        $form->handleRequest($request); //Permet de gérer le traitement de la saisie du formulaire
 
         if ($form->isSubmitted() && $form->isValid()) {
             $date = new \DateTime();
@@ -63,26 +63,26 @@ class OrderController extends AbstractController
             if ($delivery->getCompany()) {
                 $delivery_content .= '<br>'.$delivery->getCompany();
             }
-
+            //Adresse de livraison
             $delivery_content .= '<br>'.$delivery->getAddress();
             $delivery_content .= '<br>'.$delivery->getPostal().' '.$delivery->getCity();
             $delivery_content .= '<br>'.$delivery->getCountry();
 
             //Enregistrer ma commande Order()
             $order = new Order();
-            $reference = $date->format('dmY').'-'.uniqid();
-            $order->setReference($reference);
-            $order->setUser($this->getUser());
-            $order->setCreatedAt($date);
-            $order->setCarrierName($carriers->getName());
-            $order->setCarrierPrice($carriers->getPrice());
-            $order->setDelivery($delivery_content);
-            $order->setState(0);
+            $reference = $date->format('dmY').'-'.uniqid(); //Creation du n° de commande date + id unique
+            $order->setReference($reference); //Numero de la commande
+            $order->setUser($this->getUser()); //Infos user
+            $order->setCreatedAt($date); //Date de création de la commande
+            $order->setCarrierName($carriers->getName()); //Nom du transporteur
+            $order->setCarrierPrice($carriers->getPrice()); //Prix de la livraison
+            $order->setDelivery($delivery_content); //Adresse de livraison
+            $order->setState(0); //State 0 = Non payée
 
-            $this->entityManager->persist($order);
+            $this->entityManager->persist($order); //Fige la donnée avant le flush
 
 
-            //Enregistrer mes produits OrderDetails()
+            //Enregistrer mes produits dans le panier OrderDetails()
             foreach ($cart->getFull() as $product) {
                 $orderDetails = new OrderDetails();
                 $orderDetails->setMyOrder($order);
