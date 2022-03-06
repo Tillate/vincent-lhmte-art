@@ -36,6 +36,34 @@ class OrderCrudController extends AbstractCrudController
         return Order::class;
     }
 
+    //Triage des ID descendant
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud->setDefaultSort(['id'=>'DESC']);
+    }
+    
+    //Detail de la commande
+    public function configureFields(string $pageName): iterable
+    {
+        return [
+            IdField::new('id'),
+            DateTimeField::new('createdAt', 'Commandé le'),
+            TextField::new('user.getfullname', 'Utilisateur'),
+            TextEditorField::new('delivery', 'Adresse de livraison'),
+            MoneyField::new('total', 'Total produit')->setCurrency('EUR'),
+            TextField::new('carrierName', 'Transporteur'),
+            MoneyField::new('carrierPrice', 'Frais de port')->setCurrency('EUR'),
+            ChoiceField::new('state')->setChoices([
+                'Non payée' => 0,
+                'Payée' => 1,
+                'Préparation en cours' => 2,
+                'Livraison en cours' => 3,
+            ]),
+            ArrayField::new('orderDetails', 'Produits achetés')->hideOnIndex()
+        ];
+    }
+
+    //Boutons mise à jour du statut de la livraison
     public function configureActions(Actions $actions): Actions
     {
         $updatePreparation = Action::new('updatePreparation', 'Préparation en cours', 'fas fa-box-open')->linkToCrudAction('updatePreparation');
@@ -47,6 +75,7 @@ class OrderCrudController extends AbstractCrudController
             ->add('index', 'detail');
     }
 
+    //Fonction modification du state à 2 et envoi du mail
     public function updatePreparation(AdminContext $context)
     {
         $order = $context->getEntity()->getInstance();
@@ -70,6 +99,7 @@ class OrderCrudController extends AbstractCrudController
         return $this->redirect($routeBuilder->setController(OrderCrudController::class)->setAction('index')->generateUrl());
     }
 
+    //Fonction modification du state à 3 et envoi du mail
     public function updateDelivery(AdminContext $context)
     {
         $order = $context->getEntity()->getInstance();
@@ -89,32 +119,6 @@ class OrderCrudController extends AbstractCrudController
         $routeBuilder = $this->get(AdminUrlGenerator::class);
  
         return $this->redirect($routeBuilder->setController(OrderCrudController::class)->setAction('index')->generateUrl());
-    }
-
-    //Triage des ID descendant
-    public function configureCrud(Crud $crud): Crud
-    {
-        return $crud->setDefaultSort(['id'=>'DESC']);
-    }
-    
-    public function configureFields(string $pageName): iterable
-    {
-        return [
-            IdField::new('id'),
-            DateTimeField::new('createdAt', 'Commandé le'),
-            TextField::new('user.getfullname', 'Utilisateur'),
-            TextEditorField::new('delivery', 'Adresse de livraison'),
-            MoneyField::new('total', 'Total produit')->setCurrency('EUR'),
-            TextField::new('carrierName', 'Transporteur'),
-            MoneyField::new('carrierPrice', 'Frais de port')->setCurrency('EUR'),
-            ChoiceField::new('state')->setChoices([
-                'Non payée' => 0,
-                'Payée' => 1,
-                'Préparation en cours' => 2,
-                'Livraison en cours' => 3,
-            ]),
-            ArrayField::new('orderDetails', 'Produits achetés')->hideOnIndex()
-        ];
     }
     
 }

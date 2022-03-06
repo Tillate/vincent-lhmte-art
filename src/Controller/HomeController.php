@@ -23,7 +23,9 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
+        //Fonctionnalité mise en avant produit
         $products = $this->entityManager->getRepository(Product::class)->findByIsBest(1);
+        //Fonctionnalité article a la une
         $headers = $this->entityManager->getRepository(Header::class)->findAll();
 
         return $this->render('home/index.html.twig', [

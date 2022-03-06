@@ -127,6 +127,12 @@ a {
 .link-underline{
     text-decoration: underline;
 }
+.link-underline:hover {
+    opacity: 0.8;
+}
+.bold {
+    font-weight: 700;
+}
 
 .container {
     /* padding: 0 20px; */
@@ -171,6 +177,7 @@ a {
 .admin-text {
     margin: 20px 0;
     font-weight: 600;
+    text-align: center;
 }
 
 
@@ -339,8 +346,7 @@ header {
         position: relative;
         right: 0;
         flex-direction: row;
-        gap: 35px;
-        
+        gap: 35px; 
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -402,11 +408,8 @@ header {
 /********** 3. MAIN **********/
 /********** 3.1 Title **********/
 .title {
-    /* font-size: 2em; */
     text-align: center;
     font-weight: 300;
-    /* margin-bottom: 50px; */
-    /* margin: 50px 0; */
 }
 .title a {
     font-size: 2rem;
@@ -427,6 +430,12 @@ header {
 
 .breadcrumb ul {
     display: flex;
+}
+.breadcrumb a, .breadcrumb span {
+    font-size: 0.8rem;
+}
+.breadcrumb a:hover {
+    opacity: 0.8;
 }
 
 .breadcrumb li::before {
@@ -888,7 +897,6 @@ footer a:hover {
     margin-top: 10px;
     font-weight: 600;
     text-align: center;
-    line-height: 1.8em;
 }
 
 /********** 9. CONTACT PAGE **********/
@@ -938,7 +946,7 @@ footer a:hover {
     color: #ffff;
 }
 
-.contact-info {
+.contact-info, .address-info {
     text-align: center;
 }
 .contact-info p {
@@ -981,6 +989,9 @@ footer a:hover {
     margin-bottom: 10px;
 }
 .account-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-transform: uppercase;
     font-size: 13px;
     color: var(--color-blue);
@@ -988,7 +999,7 @@ footer a:hover {
 }
 .account-item a:hover {
     color: var(--color-blue);
-    opacity: 0.7;
+    opacity: 0.8;
     text-decoration: none;
 }
 
@@ -1130,8 +1141,14 @@ form {
     align-items: center;
     height: 30px;
 }
+
 .order-card-info span {
     text-align: end;
+    font-size: 0.8rem;
+}
+.order-card-info p {
+    font-weight: 800;
+    font-size: 0.8rem;
 }
 
 .order-card div {
@@ -1139,6 +1156,12 @@ form {
 }
 .order-card-btn {
     justify-self: center;
+}
+
+@media only screen and (min-width: 375px) {
+    .order-card-info p, .order-card-info span{
+        font-size: 1rem;
+    }
 }
 
 /********** 11. CART PAGE **********/
@@ -1187,6 +1210,19 @@ form {
     background-color: var(--color-blue);
 }
 
+@media only screen and (max-width: 425px) {
+    .cart-img {
+        height: 70px;
+        width: 50px;
+    }
+    .cart-desc td, .cart-desc small, th {
+        font-size: 0.7rem;
+    }
+    .cart-desc th:nth-child(3) {
+        margin-left: 20px;
+    }
+}
+
 
 /********** 12. DELIVERY OPTIONS **********/
 .carrier-container {
@@ -1210,7 +1246,6 @@ form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    margin-bottom: 15px;
 }
 .sub-total{
     display: flex;
@@ -1224,22 +1259,16 @@ margin-bottom: 25px;
 
 /********** 13.1 Order Details **********/
 .order-detail-container{
+    width: 300px;
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 10px;
+    gap: 5px;
     padding: 20px;
     background-color: var(--color-bg);
     margin-top: 10px;
 }
 
-.order-detail-total {
-    flex-direction: column;
-    text-align: end;
-    margin-top: 20px;
-    align-self: flex-end;
-    align-items: flex-end;
-}
 .align-left {
     text-align: start;
 }
@@ -1260,4 +1289,12 @@ margin-bottom: 25px;
 .order-validate-address {
     background-color: var(--color-bg);
     padding: 20px 50px;
+}
+.order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.order-total {
+    margin-top: 10px;
 }

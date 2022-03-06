@@ -23,7 +23,7 @@
         {% endfor %}
 
         {% if app.user %}
-            <div class="">
+            <div>
                 Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Deconnexion</a>
             </div>
         {% endif %}
@@ -36,9 +36,7 @@
         
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
             
-                <button type="submit">
-                    Se connecter
-                </button>
+                <button type="submit">Se connecter</button>
         </div>
 
         <p><a href="{{ path('reset_password')}}" class="login-link">Mot de passe oublié</a> ?</p>

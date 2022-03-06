@@ -3,20 +3,12 @@
 namespace App\Controller;
 
 use App\Classe\Cart;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CartController extends AbstractController
 {
-    // private $entityManager;
-
-    // public function __construct(EntityManagerInterface $entityManager)
-    // {
-    //     $this->entityManager = $entityManager;
-    // }
-
     /**
      * @Route("/mon-panier", name="cart")
      */

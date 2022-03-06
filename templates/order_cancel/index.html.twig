@@ -3,13 +3,15 @@
 {% block title %}Erreur de paiement - Vincent LHMTE Art{% endblock %}
 
 {% block content %}
-    <h2>Erreur de paiement</h2>
-    <hr>
-    <p>
+
+    <h1>Erreur de paiement</h1>
+
+    <p class="mb-15">
         Bonjour <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong>,<br><br>
         Il semblerait que votre paiement ai échoué pour votre commande n°<strong>{{ order.reference }}</strong>.<br>
         Une confirmation d'erreur vient de vous être envoyée à l'adresse email suivante : <strong> {{ order.user.email }}</strong>. 
-        <hr>
     </p>
+
     <a href="{{ path('order') }}" class="admin-btn">Réessayer le paiement</a>
+
 {% endblock %}

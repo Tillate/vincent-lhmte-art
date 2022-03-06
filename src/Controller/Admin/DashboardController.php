@@ -17,6 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DashboardController extends AbstractDashboardController
 {
+    //Afficher les commandes sur la page d'accueil
     /**
      * @Route("/admin", name="admin")
      */
@@ -42,5 +43,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Products', 'fas fa-tag', Product::class);
         yield MenuItem::linkToCrud('Carriers', 'fas fa-truck', Carrier::class);
         yield MenuItem::linkToCrud('Headers', 'fas fa-desktop', Header::class);
+        yield MenuItem::linktoRoute('Retourner sur le site', 'fa fa-sign-out', 'home');
     }
 }

@@ -22,7 +22,7 @@ class SearchType extends AbstractType
                 'label' => false,
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Votre recherche...',
+                    'placeholder' => 'Recherche par nom...',
                     'class' => 'search-input'
                 ]
             ])
@@ -46,7 +46,7 @@ class SearchType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Search::class,
             'method' => 'GET',
-            'crsf_protection' => false,
+            'csrf_protection' => false,
         ]);
     }
 

@@ -23,7 +23,6 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->addFlash('notice', "Merci de m'avoir contacté. Je vous répondrai dans les meilleures délais.");
             
-
             //Récupérer la data du formulaire 
             $form->getData();
             

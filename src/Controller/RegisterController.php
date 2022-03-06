@@ -53,7 +53,7 @@ class RegisterController extends AbstractController
                 $this->entityManager = $doctrine->getManager();
                 $this->entityManager->persist($user); //On fige la donnée avant le flush
                 $this->entityManager->flush(); //On flush la donnée dans la base de données
-
+                //Mail confirmation Inscription
                 $mail = new Mail();
                 $content = "Bonjour <b>".$user->getFirstName()." ".$user->getLastName()."</b>,"."
                 <br><br>Bienvenue sur Vincent LHMTE Art.

@@ -22,16 +22,14 @@ class ProductController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-
     /**
      * @Route("/galerie", name="products")
      */
     public function index(Request $request): Response
     {
-
+        //Formulaire Filtres
         $search = new Search();
         $form = $this->createForm(SearchType::class, $search);
-
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $products = $this->entityManager->getRepository(Product::class)->findWithSearch($search);
@@ -53,6 +51,7 @@ class ProductController extends AbstractController
         $product =$this->entityManager->getRepository(Product::class)->findOneBySlug($slug);
         $products = $this->entityManager->getRepository(Product::class)->findByIsBest(1);
 
+        //Si pas de product en bdd on redirige vers la galerie
         if(!$product) {
             return $this->redirectToRoute('products');
         }

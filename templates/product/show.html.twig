@@ -3,14 +3,14 @@
 {% block title %}{{ product.name }} - Vincent LHMTE Art{% endblock %}
 
 {% block content %}
-        <div class="ariane">
-            <nav aria-label="Breadcrumb" class="breadcrumb">
-                <ul>
-                    <li><a href="{{ path('products') }}">Galerie</a></li>
-                    <li><span aria-current="page">{{ product.name }}</span></li>
-                </ul>
-            </nav>
-        </div>
+    <div class="ariane">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ul>
+                <li><a href="{{ path('products') }}">Galerie</a></li>
+                <li><span aria-current="page">{{ product.name }}</span></li>
+            </ul>
+        </nav>
+    </div>
     <div class="single-product-container">
         <div class="product-image-container">
                 <div class="img-product">
@@ -49,30 +49,35 @@
             </div>
         {% endfor %}
     </div> #}
+
     {% block javascript %}
-    <script>
-        //Script Galerie Photos
-        const current = document.getElementById('current');
-        const thumbnails = document.querySelectorAll('.thumbnail');
+        <script>
+            //Script Galerie Photos
+            const current = document.getElementById('current');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            
+            //Opacité pour voir la vignette select
+            thumbnails[0].style.opacity = 0.6;
+            //Boucle sur les vignettes
+            for (let i = 0; i < thumbnails.length; i++){
+            thumbnails[i].addEventListener('click', show);
+            };
 
-        thumbnails[0].style.opacity = 0.6;
+            function show() {
+            thumbnails.forEach(function (img){
+                img.style.opacity = 1;
+            })
+            //Swich source current image
+            let imgSource = this.getAttribute('src');
+            current.setAttribute('src', imgSource);
 
-        for (let i = 0; i < thumbnails.length; i++){
-        thumbnails[i].addEventListener('click', show);
-        };
-
-        function show() {
-        thumbnails.forEach(function (img){
-            img.style.opacity = 1;
-        })
-        let imgSource = this.getAttribute('src');
-        current.setAttribute('src', imgSource);
-        current.classList.add('fade-in');
-        this.style.opacity = 0.6;
-        setTimeout (function (){
-            current.classList.remove('fade-in');
-        },300);
-        }
-    </script>
+            //Effet fade in
+            current.classList.add('fade-in');
+            this.style.opacity = 0.6;
+            setTimeout (function (){
+                current.classList.remove('fade-in');
+            },300);
+            }
+        </script>
     {% endblock %}
 {% endblock %}

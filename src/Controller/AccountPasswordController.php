@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AccountPasswordController extends AbstractController
 {
     private $entityManager;
-
+    //Pour récupérer le formulaire de changement mdp
     /**
      * AccountPasswordController constructor
      * @param $entityManager
@@ -39,9 +39,11 @@ class AccountPasswordController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $old_password = $form->get('old_password')->getData();
 
+            //On teste si l'ancien mdp est valide
             if ($passwordHasher->isPasswordValid($user, $old_password)) {
+                
+                //Si ancien mdp valide on get le nouveau dans le form, on le hash, set puis flush
                 $user = $form->getData();
-
                 $new_password = $form->get('new_password')->getData();
                 $password = $passwordHasher->hashPassword($user, $new_password);
 

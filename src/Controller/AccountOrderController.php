@@ -22,9 +22,9 @@ class AccountOrderController extends AbstractController
      * @Route("/compte/mes-commandes", name="account_order")
      */
     public function index(): Response
-    {
+    {   
+        //Afficher les commande payées
         $orders = $this->entityManager->getRepository(Order::class)->findSuccessOrders($this->getUser());
-
 
         return $this->render('account/order.html.twig', [
             'orders' => $orders
@@ -37,11 +37,11 @@ class AccountOrderController extends AbstractController
     public function show($reference): Response
     {
         $order = $this->entityManager->getRepository(Order::class)->findOneByReference($reference);
-
+        // On test si le user possede des commandes
+        //Si NOT order OU order getuser différent de this get user on renvoit a mes commandes
         if (!$order || $order->getUser() != $this->getUser()) {
             return $this->redirectToRoute('account_order');
         }
-
 
         return $this->render('account/order_show.html.twig', [
             'order' => $order,

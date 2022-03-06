@@ -36,13 +36,14 @@ class AccountAddressController extends AbstractController
         $address = new Address();
 
         $form =$this->createForm(AddressType::class, $address);
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $address->setUser($this->getUser());
             $this->entityManager->persist($address);
             $this->entityManager->flush();
+
+            //Si produit dans panier on redirige vers option de livraison
             if ($cart->get()) {
                 return $this->redirectToRoute('order');
             } else {
@@ -67,7 +68,6 @@ class AccountAddressController extends AbstractController
         }
 
         $form =$this->createForm(AddressType::class, $address);
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -86,7 +86,7 @@ class AccountAddressController extends AbstractController
     public function delete($id): Response
     {
         $address = $this->entityManager->getRepository(Address::class)->findOneById($id);
-
+        //Si  l'adresse AND l'adresse en bdd  sont egale a l'adresse de this getuser
         if ($address && $address->getUser() == $this->getUser()) {
             $this->entityManager->remove($address);
             $this->entityManager->flush();

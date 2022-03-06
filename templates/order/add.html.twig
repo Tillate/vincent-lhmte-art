@@ -55,7 +55,7 @@
                     <strong>Sous-Total : </strong> {{ (total / 100)|number_format(2,',','.') }} €<br>
                     <strong>Dont TVA 20% : </strong> {{ ((total / 100)*0.2)|number_format(2,',','.') }} €<br>
                     <strong>Livraison : </strong> {{ (carrier.price / 100)|number_format(2,',','.') }} €<br>
-                    <strong>Total : </strong> {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.') }} €
+                    <strong>Total TTC : </strong> {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.') }} €
                 </div>
                 <div>
                     <a class="admin-btn" id="checkout-button">Payer |  {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.') }} €</a>

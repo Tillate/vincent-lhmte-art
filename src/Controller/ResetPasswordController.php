@@ -28,10 +28,11 @@ class ResetPasswordController extends AbstractController
      */
     public function index(Request $request): Response
     {
+        //Si connecté redirect to home
         if($this->getUser()) {
             return $this->redirectToRoute('home');
         }
-
+        //On check si l'email entré existe en bdd
         if ($request->get('email')) {
             $user = $this->entityManager->getRepository(User::class)->findOneByEmail($request->get('email'));
 
@@ -69,7 +70,7 @@ class ResetPasswordController extends AbstractController
     public function update(Request $request,$token, UserPasswordHasherInterface $passwordHasher): Response
     {
         $reset_password = $this->entityManager->getRepository(ResetPassword::class)->findOneByToken($token);
-
+        //Si token inexistant
         if (!$reset_password) {
             return $this->redirectToRoute('reset_password');
         }

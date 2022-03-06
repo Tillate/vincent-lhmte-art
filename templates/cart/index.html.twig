@@ -4,16 +4,16 @@
 
 {% block content %}
 <div class="cart-container">
-        <nav aria-label="Breadcrumb" class="breadcrumb">
-            <ul>
-                <li><a href="{{ path('products') }}">Galerie</a></li>
-                <li><span aria-current="page">Mon panier</span></li>
-            </ul>
-        </nav>
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ul>
+            <li><a href="{{ path('products') }}">Galerie</a></li>
+            <li><span aria-current="page">Mon panier</span></li>
+        </ul>
+    </nav>
 
-        <h1>Mon panier</h1>
-        <p>Retrouvez l'ensemble des produits que vous avez ajouté à votre panier.</p>
-    
+    <h1>Mon panier</h1>
+    <p>Retrouvez l'ensemble des produits que vous avez ajouté à votre panier.</p>
+
     {% if cart|length >0 %}
     <table class="cart-tab">
         <thead>
@@ -73,7 +73,6 @@
     {% else %}
         <p class="cart-tab"><b>Votre Panier est vide</b></p>
         <div class="admin-btn"><a href="{{ path('products') }}" class="admin-btn">Accéder à la galerie</a></div>
-        
     {% endif %}
 </div>
 {% endblock %}

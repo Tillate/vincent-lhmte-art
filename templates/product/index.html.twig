@@ -3,8 +3,9 @@
 {% block title %}Galerie - Vincent LHMTE Art{% endblock %}
 
 {% block content %}
-    <h3>Tableaux</h3>
+    <h1>Tableaux</h1>
 
+    {# Bouton Filtre #}
     <div class="filter-container">
         <div class="filtres">
             <h5>Filtres</h5>
@@ -14,12 +15,15 @@
         <div class="menuToggle2">
             <input type="checkbox" class="filter-input" />
             
+            {# Form Filter #}
             <div class="menu2">
                 {{ form(form) }}
             </div>
 
         </div>
     </div>
+
+    {# Galerie produit #}
     <div class="galerie-container">
         <div class="product-container">
 

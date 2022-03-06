@@ -3,7 +3,15 @@
 {% block title %}Valider ma commmande - Vincent LHMTE Art{% endblock %}
 
 {% block content %}
-    <h2>Options de livraison</h2>
+<div class="cart-container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ul>
+            <li><a href="{{ path('products') }}">Galerie</a></li>
+            <li><a href="{{ path('cart') }}">Mon panier</a></li>
+            <li><span aria-current="page">Options de livraison</span></li>
+        </ul>
+    </nav>
+    <h1>Options de livraison</h1>
     <p>Choisissez vos préférences avant de passer votre commande sur Vincent LHMTE Art</p>
 
     <div class="carrier-container">
@@ -41,4 +49,5 @@
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

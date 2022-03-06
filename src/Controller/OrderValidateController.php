@@ -33,7 +33,6 @@ class OrderValidateController extends AbstractController
             //Vider la session "cart"
             $cart->remove();
 
-
             //Modifier le statut de la commande en mettant 1
             $order->setState(1);
             $this->entityManager->flush();
