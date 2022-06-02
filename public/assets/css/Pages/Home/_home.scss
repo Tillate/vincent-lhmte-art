@@ -1,0 +1,126 @@
+/********** 5. HOME PAGE **********/
+/********** 5.1 Home Container **********/
+
+.container-home {
+    width: 100%;
+    max-width: 1290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 50px;
+}
+
+.container-home p {
+    line-height: 1.6em;
+    margin-bottom: 20px;
+}
+
+.home-img img {
+    width: 100%;
+}
+
+.quote {
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.2em;
+    margin: 30px 0 65px 0;
+}
+/********** 5.2 Images **********/
+
+.square-paint-container, .zoomed-paint-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.square-paint-container img{
+    width: 30%;
+}
+
+.zoomed-paint-container img {
+    width: 48%;
+}
+.primary-img {
+    width: 100%;
+}
+
+/********** 5.3 Galery CTA BTN **********/
+.home-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 80%;
+    text-transform: uppercase;
+    margin: 50px 0;
+    border: 1px solid var(--color-blue);
+    border-radius: 3px;
+}
+
+/********** 5.4 Reviews **********/
+.container-review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    margin: 50px 0;
+}
+
+.card-reviews {
+    text-align: center;
+}
+.container-review h2, .card-reviews p {
+    margin: 0;
+}
+.card-reviews p:first-child{
+    margin-bottom: 10px;
+}
+
+/********** 5.5 Reassurance **********/
+.container-assurance {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container-assurance h3 {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .container-assurance {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .container-description {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 34px;
+    }
+    .home-cta {
+        width: 40%;
+    }
+    .home-cta:hover{
+        background-color: var(--color-blue);
+        box-shadow: inset 5em 0 0 0 var(--color-blue),
+        inset -5em 0 0 0 var(--color-blue);
+        border-color: var(--color-blue);
+        color: #ffffff;
+        transition:all 0.4s;
+    }
+    .container-assurance {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

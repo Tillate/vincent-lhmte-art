@@ -1,0 +1,55 @@
+/********** 10.1 Login **********/
+.register-container {
+    max-width: 450px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 450px;
+}
+.account-form {
+    gap: 12px;
+}
+.form-group select {
+    height: 35px;
+}
+
+.login-form input {
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+}
+
+.login-form button:hover {
+    transition: 0.3s;
+    opacity: 0.9;
+}
+
+.login-container p {
+    margin: 15px 0;
+}
+
+.login-link {
+    text-decoration: underline;
+}
+
+
+/********** 10.2 Register **********/
+.register-form {
+    width: 100%;
+    max-width: 800px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.required {
+    margin-bottom: 5px;
+}

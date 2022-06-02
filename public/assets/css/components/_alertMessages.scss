@@ -1,0 +1,15 @@
+/********** 1.3 Messages Flash **********/
+.alert-info, .text-alert, .success-info {
+    padding: 10px;
+    border-radius: 3px;
+    margin: 10px 0;
+    width: fit-content;
+}
+.alert-info, .text-alert {
+    color: #a00000;
+    background: #f8d7da;
+}
+.success-info {
+    color: var(--color-blue);
+    background: #d4edda;
+}

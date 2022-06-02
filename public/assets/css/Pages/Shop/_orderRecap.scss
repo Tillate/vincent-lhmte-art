@@ -1,0 +1,57 @@
+/********** 13. ORDER RECAP **********/
+.cart-recap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.sub-total{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+}
+.recap-card {
+margin-bottom: 25px;
+}
+
+/********** 13.1 Order Details **********/
+.order-detail-container{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    padding: 20px;
+    background-color: var(--color-bg);
+    margin-top: 10px;
+}
+
+.align-left {
+    text-align: start;
+}
+
+.order-detail-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+.order-detail-card div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 250px;
+}
+
+.order-validate-address {
+    background-color: var(--color-bg);
+    padding: 20px 50px;
+}
+.order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.order-total {
+    margin-top: 10px;
+}

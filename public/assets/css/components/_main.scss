@@ -1,0 +1,42 @@
+/********** 3. MAIN **********/
+/********** 3.1 Title **********/
+.title {
+    text-align: center;
+    font-weight: 300;
+}
+.title a {
+    font-size: 2rem;
+}
+
+/********** 3.2 Container **********/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/********** 3.3 Fil d'Ariane **********/
+.breadcrumb {
+    margin-bottom: 30px;
+    align-self: flex-start;
+}
+
+.breadcrumb ul {
+    display: flex;
+}
+.breadcrumb a, .breadcrumb span {
+    font-size: 0.8rem;
+}
+.breadcrumb a:hover {
+    opacity: 0.8;
+}
+
+.breadcrumb li::before {
+    content: ">";
+    margin: 0 8px;
+}
+    
+.breadcrumb li:first-child::before {
+    content: "";
+    margin: 0;
+}

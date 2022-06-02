@@ -1,0 +1,58 @@
+/********** 11. CART PAGE **********/
+.cart-container, .cart-tab {
+    width: 100%;
+    max-width: 800px;
+}
+.cart-tab {
+    margin: 20px 0;
+}
+.cart-img {
+    height: 150px;
+    width: 120px;
+    object-fit: cover;
+}
+.cart-total {
+    margin-bottom: 30px;
+}
+.cart-total p {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.cart-btn, .cart-total p {
+    display: block;
+    max-width: 400px;
+    margin-left: auto;
+}
+
+.cart-desc {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.cart-desc th:nth-child(3) {
+    margin-left: 50px;
+}
+.cart-desc::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -10px;
+    background-color: var(--color-blue);
+}
+
+@media only screen and (max-width: 425px) {
+    .cart-img {
+        height: 70px;
+        width: 50px;
+    }
+    .cart-desc td, .cart-desc small, th {
+        font-size: 0.7rem;
+    }
+    .cart-desc th:nth-child(3) {
+        margin-left: 20px;
+    }
+}

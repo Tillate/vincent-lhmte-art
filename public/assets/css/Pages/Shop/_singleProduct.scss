@@ -1,0 +1,110 @@
+/********** 7. SINGLE PRODUCT PAGE **********/
+/********** 7.1 Single Product container **********/
+.single-product-container {
+    max-width: 1290px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+.ariane {
+    max-width: 1290px;
+    width: 100%;
+}
+
+/********** 7.2 Images Galery **********/
+.product-image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 450px;
+    max-height: 750px;
+    /* width: 50%; */
+    /* height: 100%; */
+}
+.img-product {
+    height: 100%;
+    width: 100%;
+}
+.single-product-img {
+    object-fit: cover;
+    height: 100%;
+    /* width: 100%; */
+    max-width: 300px;
+    /* max-width: 400px; */
+    /* max-height: 500px; */
+    max-height: 550px;
+    border-radius: 3px;
+}
+
+/********** 7.2.1 Galery **********/
+.product-image-galerie img:hover{
+    cursor: pointer;   
+}
+.product-image-galerie img {
+    object-fit: cover;
+}
+
+/********** 7.2.2 Fade effect script galery **********/
+@keyframes fadeIn {
+    to {
+      opacity:1;
+    }
+}
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.4s ease-in 1 forwards;
+}
+
+/********** 7.3 Description **********/
+.single-product-description {
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    /* width: 50%; */
+    max-width: 450px;
+    gap: 20px;
+}
+
+.product-page-price span {
+    font-size: 1.4em;
+}
+.product-page-price a {
+    margin-left: 15px;
+}
+
+/********** 7.4 Media Query **********/
+@media only screen and (min-width: 768px) {
+    .single-product-img {
+        max-width: 450px;
+    }
+    .product-image-container{
+        flex-direction: row-reverse;
+    }
+    .product-image-galerie {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: end;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .single-product-container {
+        flex-direction: row ;
+        justify-content: center;
+        align-items: flex-start;
+
+    }
+    .single-product-description hr{
+        max-width: 450px;
+    }
+    .product-page-price a {
+        margin-left: 20px;
+    }
+    .product-image-galerie {
+        max-width: 85px;
+    }
+}

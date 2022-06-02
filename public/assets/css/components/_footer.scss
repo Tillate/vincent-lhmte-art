@@ -1,0 +1,25 @@
+/********** 4. FOOTER **********/
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 15vh;
+    text-align: center;
+    width: 100%;
+    background-color: var(--color-bg);
+}
+
+.footer-nav {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+footer p {
+    font-size: 12px;
+    font-weight: 400;
+}
+footer a:hover {
+    opacity: 0.7;
+}

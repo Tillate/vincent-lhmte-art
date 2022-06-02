@@ -1,0 +1,152 @@
+/********** 10. ACCOUNT **********/
+.block-small {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-check {
+    background-color: var(--color-bg);
+    padding: 20px 45px 20px 20px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+.col-form-label {
+    font-weight: bold;
+}
+
+.order-summary {
+    background-color: var(--color-bg);
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.account-item {
+    background-color: var(--color-bg);
+    padding: 30px;
+    text-align: center;
+    margin-top: 15px;
+}
+.account-item img {
+    margin-bottom: 10px;
+}
+.account-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--color-blue);
+    font-weight: bold;
+}
+.account-item a:hover {
+    color: var(--color-blue);
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .account-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+
+/********** 10.3 Account Adresses **********/
+.address-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.address-card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.address-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 30px;
+    margin: 15px;
+    border-radius: 3px;
+    background-color: var(--color-bg);
+}
+form {
+    width: 100%;
+}
+
+@media only screen and (min-width: 400px) {
+    form {
+        width: unset;
+    }
+}
+
+.form-name {
+    display: flex;
+    /* gap: 10px; */
+    justify-content: space-between;
+}
+
+
+/********** 10.4 Account Order **********/
+.order-table {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    border: 1px solid #ced4da;
+}
+.order-table tr {
+    height: 40px;
+}
+
+.order-btn {
+    padding: 6px 10px;
+}
+.title-table th {
+    border-bottom: 1px solid #ced4da;
+}
+
+.order-card {
+    max-width: 450px;
+    width: 100%;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 20px 0;
+    background-color: var(--color-bg);
+}
+.order-card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+}
+
+.order-card-info span {
+    text-align: end;
+    font-size: 0.8rem;
+}
+.order-card-info p {
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+
+.order-card div {
+    background-color: var(--color-bg);
+}
+.order-card-btn {
+    justify-self: center;
+}
+
+@media only screen and (min-width: 375px) {
+    .order-card-info p, .order-card-info span{
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,80 @@
+/********** 1. GENERAL **********/
+/********** 1.1 Variables **********/
+:root {
+    --color-blue: #192A3D;
+    --color-bg: #F2F5F7;
+}
+
+/********** 1.1 Corps **********/
+* {
+    font-family: Josefin Sans, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-blue);
+    font-size: 1rem;
+}
+
+body {
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+main {
+    min-height: 70vh;
+    padding-top: 50px;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+h2 {
+    font-size: 2.1em;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 1.6em;
+    font-weight: 400;
+    margin: 30px 0 15px 0;
+}
+
+p {
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mb15 {
+    margin-bottom: 15px;
+}
+.mt15{
+    margin-top: 15px;
+}
+.link-underline{
+    text-decoration: underline;
+}
+.link-underline:hover {
+    opacity: 0.8;
+}
+.bold {
+    font-weight: 700;
+}
+
+.container {
+    /* padding: 0 20px; */
+    padding: 50px 20px 20px 20px;
+}
+
+.error-btn {
+    display: block;
+}
