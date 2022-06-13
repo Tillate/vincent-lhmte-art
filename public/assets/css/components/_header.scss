@@ -4,27 +4,12 @@ header {
     position: sticky;
     top: 0;
     background-color: var(--color-bg);
-    /* height: 150px; */
     display: flex;
     align-items: center;
     z-index: 5;
 }
 
-
 /********** 2.1 Logo Account & Cart **********/
-.account-logo {
-    display: flex;
-    align-items: center;
-    height: 24px;
-    display: none;
-    
-}
-.cart-link a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
 .cart-link {
     display: flex;
     align-items: center;
@@ -33,17 +18,32 @@ header {
     height: 35px;
     z-index: 10;
     right: 80px;
-}
-.cart-icon {
-    margin-left: 10px;
-}
 
-@media only screen and (max-width: 1224px) {
+    a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .account-logo {
+        display: block;   
+        height: 24px;
+    }
     .account-link {
         display: none;
     }
-    .account-logo {
-        display: unset;
+    .cart-icon {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 1224px) {
+    .cart-link {
+        .account-link {
+            display: block;
+        }
+        .account-logo {
+            display: none;
+        }
     }
 }
 
@@ -55,62 +55,64 @@ header {
     top: 55px;
     right: 30px;
     z-index: 1;
-}
-  
-.menuToggle a {
-    color: var(--color-blue);
-}
-  
-.menuToggle input {
-    display: block;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: -5px;
-    left: 0px;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 2;
-}
-  
-.menuToggle span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    margin-bottom: 5px;
-    position: relative;
-    background: var(--color-blue);
-    border-radius: 3px;
-    z-index: 1;
-    transform-origin: 4px 0px;
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
-}
-  
-.menuToggle span:first-child {
-    transform-origin: 0% 0%;
-}
-  
-.menuToggle span:nth-last-child(2) {
-    transform-origin: 0% 100%;
-}
 
-.menuToggle input:checked ~ span {
-    opacity: 1;
-    transform: rotate(408deg) translate(-2px, -1px);
-    background: var(--color-blue);
-}
-  
-.menuToggle input:checked ~ span:nth-last-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-}
-  
-.menuToggle input:checked ~ span:nth-last-child(2) {
-    transform: rotate(-45deg) translate(0, -1px);
-}
+    // Navigation link
+    a {
+        color: var(--color-blue);
+    }
+    // Burger Menu span 
+    span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin-bottom: 5px;
+        position: relative;
+        background: var(--color-blue);
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
 
+        &:first-child {
+            transform-origin: 0% 0%;
+        }       
+        &:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+    }
+    // Input déclencheur du menu
+    input {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: -5px;
+        left: 0px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+
+         // Rotation des barres au clic du menu
+        &:checked ~ span {
+            opacity: 1;
+            transform: rotate(408deg) translate(-2px, -1px);
+            background: var(--color-blue);
+        }  
+        &:checked ~ span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }  
+        &:checked ~ span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
+        // Slide menu
+        &:checked ~ .menu {
+            transform: none;
+        }
+    }
+}
 
 /********** 2.2.2 Menu **********/
 .menu {
@@ -124,23 +126,18 @@ header {
     align-items: end;
     text-align: right;
     gap: 35px;
-    margin: -107px 0 0 0;
-    padding: 150px 50px 50px 50px;
-    transform: translate(0, -100%);
+    padding: 50px;
+    transform: translateY(-125%);
     transition: transform 0.6s cubic-bezier(0.77,0.2,0.05,1.0);
-}
-  
-.menu li {
-    text-transform: uppercase;
-    padding: 10px 0;
-    font-size: 1em;
-}
-  
-.menuToggle input:checked ~ ul {
-    transform: none;
+
+    li {
+        text-transform: uppercase;
+        padding: 10px 0;
+        font-size: 1em;
+    }
 }
 
-
+// Media Queries LAPTOP (> 1024px)
 @media only screen and (min-width: 1024px) {
     .menuToggle {
         display: flex;
@@ -149,13 +146,14 @@ header {
         top: 0;
         right: 0;
         padding: 0;
-    }
-    .menuToggle input {
-        display: none;
-    }
-    
-    .menuToggle span {
-        display: none;
+
+        input {
+            display: none;
+        }
+        
+        span {
+            display: none;
+        }
     }
     .menu {
         position: relative;
@@ -170,51 +168,50 @@ header {
         padding-top: 0;
         transform: none;
         transition: none;
-    }
-    
-    .menu li {
-        padding: 10px 5px;
-        position: relative;
 
+        li {
+            padding: 10px 5px;
+            position: relative;
+        }
     }
     .cart-link {
         right: 50px;
     }
 
-
     /********** 2.2.3 NAV Underline Hover Effect **********/
-    .menu li a::before {
-        content: "";
-        position: absolute;
-        background-color: var(--color-blue);
-        height: 2px;
-        width: 0;
-        right: 50%;
-        bottom: -5px;
-        transition: 0.2s;
-    }
-    .menu li a::after {
-        content: "";
-        position: absolute;
-        background-color: var(--color-blue);
-        height: 2px;
-        width: 0;
-        left: 50%;
-        bottom: -5px;
-        transition: 0.2s;
-    }
-
-    .menu li a:hover::before, .menu a:hover::after {
-        width: 50%;
-    }
-
-    .menu li a.active::after {
-        content: "";
-        position: absolute;
-        background-color: var(--color-blue);
-        left: 0;
-        height: 2px;
-        width: 100%;
-        bottom: -5px;
+    .menu {
+        a::before {
+            content: "";
+            position: absolute;
+            background-color: var(--color-blue);
+            height: 2px;
+            width: 0;
+            right: 50%;
+            bottom: -5px;
+            transition: 0.2s;
+        }
+        a::after {
+            content: "";
+            position: absolute;
+            background-color: var(--color-blue);
+            height: 2px;
+            width: 0;
+            left: 50%;
+            bottom: -5px;
+            transition: 0.2s;
+        }
+        a:hover::before, a:hover::after {
+            width: 50%;
+        }
+        // Link active
+        .active::after {
+            content: "";
+            position: absolute;
+            background-color: var(--color-blue);
+            left: 0;
+            height: 2px;
+            width: 100%;
+            bottom: -5px;
+        }
     }
 }

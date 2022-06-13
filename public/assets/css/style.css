@@ -1,8 +1,8 @@
 /********** 1. GENERAL **********/
 /********** 1.1 Variables **********/
 :root {
-  --color-blue: #192A3D;
-  --color-bg: #F2F5F7;
+  --color-blue: #192a3d;
+  --color-bg: #f2f5f7;
 }
 
 /********** 1.1 Corps **********/
@@ -109,7 +109,7 @@ a {
 .admin-btn, .login-form button, .filter-btn {
   text-align: center;
   background-color: var(--color-blue);
-  color: #ffff;
+  color: #ffffff;
   padding: 12px 20px;
   border: transparent;
   border-radius: 3px;
@@ -133,7 +133,6 @@ header {
   position: sticky;
   top: 0;
   background-color: var(--color-bg);
-  /* height: 150px; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -144,27 +143,6 @@ header {
 }
 
 /********** 2.1 Logo Account & Cart **********/
-.account-logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 24px;
-  display: none;
-}
-
-.cart-link a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 5px;
-}
-
 .cart-link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -179,16 +157,35 @@ header {
   right: 80px;
 }
 
-.cart-icon {
+.cart-link a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.cart-link .account-logo {
+  display: block;
+  height: 24px;
+}
+
+.cart-link .account-link {
+  display: none;
+}
+
+.cart-link .cart-icon {
   margin-left: 10px;
 }
 
-@media only screen and (max-width: 1224px) {
-  .account-link {
-    display: none;
+@media only screen and (min-width: 1224px) {
+  .cart-link .account-link {
+    display: block;
   }
-  .account-logo {
-    display: unset;
+  .cart-link .account-logo {
+    display: none;
   }
 }
 
@@ -204,18 +201,6 @@ header {
 
 .menuToggle a {
   color: var(--color-blue);
-}
-
-.menuToggle input {
-  display: block;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: -5px;
-  left: 0px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
 }
 
 .menuToggle span {
@@ -245,6 +230,18 @@ header {
           transform-origin: 0% 100%;
 }
 
+.menuToggle input {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -5px;
+  left: 0px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
 .menuToggle input:checked ~ span {
   opacity: 1;
   -webkit-transform: rotate(408deg) translate(-2px, -1px);
@@ -261,6 +258,11 @@ header {
 .menuToggle input:checked ~ span:nth-last-child(2) {
   -webkit-transform: rotate(-45deg) translate(0, -1px);
           transform: rotate(-45deg) translate(0, -1px);
+}
+
+.menuToggle input:checked ~ .menu {
+  -webkit-transform: none;
+          transform: none;
 }
 
 /********** 2.2.2 Menu **********/
@@ -282,10 +284,9 @@ header {
           align-items: end;
   text-align: right;
   gap: 35px;
-  margin: -107px 0 0 0;
-  padding: 150px 50px 50px 50px;
-  -webkit-transform: translate(0, -100%);
-          transform: translate(0, -100%);
+  padding: 50px;
+  -webkit-transform: translateY(-125%);
+          transform: translateY(-125%);
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
   transition: -webkit-transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
   transition: transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -296,11 +297,6 @@ header {
   text-transform: uppercase;
   padding: 10px 0;
   font-size: 1em;
-}
-
-.menuToggle input:checked ~ ul {
-  -webkit-transform: none;
-          transform: none;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -351,7 +347,7 @@ header {
     right: 50px;
   }
   /********** 2.2.3 NAV Underline Hover Effect **********/
-  .menu li a::before {
+  .menu a::before {
     content: "";
     position: absolute;
     background-color: var(--color-blue);
@@ -362,7 +358,7 @@ header {
     -webkit-transition: 0.2s;
     transition: 0.2s;
   }
-  .menu li a::after {
+  .menu a::after {
     content: "";
     position: absolute;
     background-color: var(--color-blue);
@@ -373,10 +369,10 @@ header {
     -webkit-transition: 0.2s;
     transition: 0.2s;
   }
-  .menu li a:hover::before, .menu a:hover::after {
+  .menu a:hover::before, .menu a:hover::after {
     width: 50%;
   }
-  .menu li a.active::after {
+  .menu .active::after {
     content: "";
     position: absolute;
     background-color: var(--color-blue);

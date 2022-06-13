@@ -101,7 +101,7 @@ class OrderController extends AbstractController
                 'delivery' => $delivery_content,
                 'reference' => $order->getReference()
             ]);
-    }
+        }
 
         return $this->redirectToRoute('cart');
     }
