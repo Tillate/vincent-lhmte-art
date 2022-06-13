@@ -1,4 +1,18 @@
 /********** 13. ORDER RECAP **********/
+// add.html.twig
+.form-check {
+    background-color: var(--color-bg);
+    padding: 20px 45px 20px 20px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+.order-summary {
+    background-color: var(--color-bg);
+    padding: 20px;
+    margin-top: 10px;
+}
+
 .cart-recap {
     display: grid;
     grid-template-columns: 1fr 1fr;

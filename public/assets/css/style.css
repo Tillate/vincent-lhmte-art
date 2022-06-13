@@ -478,28 +478,6 @@ footer a:hover {
 }
 
 /********** 10. ACCOUNT **********/
-.block-small {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-check {
-  background-color: var(--color-bg);
-  padding: 20px 45px 20px 20px;
-  margin-top: 10px;
-  border-radius: 3px;
-}
-
-.col-form-label {
-  font-weight: bold;
-}
-
-.order-summary {
-  background-color: var(--color-bg);
-  padding: 20px;
-  margin-top: 10px;
-}
-
 .account-item {
   background-color: var(--color-bg);
   padding: 30px;
@@ -526,12 +504,12 @@ footer a:hover {
   font-size: 13px;
   color: var(--color-blue);
   font-weight: bold;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .account-item a:hover {
-  color: var(--color-blue);
   opacity: 0.8;
-  text-decoration: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -589,43 +567,22 @@ form {
   width: 100%;
 }
 
+.form-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 @media only screen and (min-width: 400px) {
   form {
     width: unset;
   }
 }
 
-.form-name {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  /* gap: 10px; */
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
 /********** 10.4 Account Order **********/
-.order-table {
-  max-width: 1000px;
-  width: 100%;
-  text-align: center;
-  margin-top: 15px;
-  border: 1px solid #ced4da;
-}
-
-.order-table tr {
-  height: 40px;
-}
-
-.order-btn {
-  padding: 6px 10px;
-}
-
-.title-table th {
-  border-bottom: 1px solid #ced4da;
-}
-
 .order-card {
   max-width: 450px;
   width: 100%;
@@ -661,13 +618,13 @@ form {
   font-size: 0.8rem;
 }
 
-.order-card div {
-  background-color: var(--color-bg);
-}
-
-.order-card-btn {
+.order-card-info:last-child {
   -ms-grid-column-align: center;
       justify-self: center;
+}
+
+.order-btn {
+  padding: 6px 10px;
 }
 
 @media only screen and (min-width: 375px) {
@@ -677,12 +634,6 @@ form {
 }
 
 /********** 10.1 Login **********/
-.register-container {
-  max-width: 450px;
-  width: 100%;
-  margin-bottom: 50px;
-}
-
 .login-form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -693,14 +644,6 @@ form {
           flex-direction: column;
   gap: 5px;
   max-width: 450px;
-}
-
-.account-form {
-  gap: 12px;
-}
-
-.form-group select {
-  height: 35px;
 }
 
 .login-form input {
@@ -717,6 +660,14 @@ form {
   opacity: 0.9;
 }
 
+.account-form {
+  gap: 12px;
+}
+
+.form-group select {
+  height: 35px;
+}
+
 .login-container p {
   margin: 15px 0;
 }
@@ -726,6 +677,12 @@ form {
 }
 
 /********** 10.2 Register **********/
+.register-container {
+  max-width: 450px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
 .register-form {
   width: 100%;
   max-width: 800px;
@@ -1483,6 +1440,19 @@ form {
 }
 
 /********** 13. ORDER RECAP **********/
+.form-check {
+  background-color: var(--color-bg);
+  padding: 20px 45px 20px 20px;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
+.order-summary {
+  background-color: var(--color-bg);
+  padding: 20px;
+  margin-top: 10px;
+}
+
 .cart-recap {
   display: -ms-grid;
   display: grid;
