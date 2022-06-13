@@ -3,7 +3,7 @@ header {
     min-height: 15vh;
     position: sticky;
     top: 0;
-    background-color: var(--color-bg);
+    background-color: $background;
     display: flex;
     align-items: center;
     z-index: 5;
@@ -58,7 +58,7 @@ header {
 
     // Navigation link
     a {
-        color: var(--color-blue);
+        color: $darkblue;
     }
     // Burger Menu span 
     span {
@@ -67,7 +67,7 @@ header {
         height: 3px;
         margin-bottom: 5px;
         position: relative;
-        background: var(--color-blue);
+        background: $darkblue;
         border-radius: 3px;
         z-index: 1;
         transform-origin: 4px 0px;
@@ -98,7 +98,7 @@ header {
         &:checked ~ span {
             opacity: 1;
             transform: rotate(408deg) translate(-2px, -1px);
-            background: var(--color-blue);
+            background: $darkblue;
         }  
         &:checked ~ span:nth-last-child(3) {
             opacity: 0;
@@ -116,7 +116,7 @@ header {
 
 /********** 2.2.2 Menu **********/
 .menu {
-    background-color: var(--color-bg);
+    background-color: $background;
     font-weight: 400;
     position: absolute;
     width: 100vw;
@@ -183,7 +183,7 @@ header {
         a::before {
             content: "";
             position: absolute;
-            background-color: var(--color-blue);
+            background-color: $darkblue;
             height: 2px;
             width: 0;
             right: 50%;
@@ -193,7 +193,7 @@ header {
         a::after {
             content: "";
             position: absolute;
-            background-color: var(--color-blue);
+            background-color: $darkblue;
             height: 2px;
             width: 0;
             left: 50%;
@@ -207,7 +207,7 @@ header {
         .active::after {
             content: "";
             position: absolute;
-            background-color: var(--color-blue);
+            background-color: $darkblue;
             left: 0;
             height: 2px;
             width: 100%;

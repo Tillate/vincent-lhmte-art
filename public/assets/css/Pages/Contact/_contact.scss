@@ -33,15 +33,15 @@
 .contact-btn {
     background-color: white;
     padding: 12px 40px;
-    border: 1px solid var(--color-blue);
+    border: 1px solid $darkblue;
     border-radius: 3px;
     transition: all 0.3s;
     cursor: pointer;
 }
 .contact-btn:hover {
-    background-color: var(--color-blue);
-    box-shadow: inset 5em 0 0 0 var(--color-blue), inset -5em 0 0 0 var(--color-blue);
-    border-color: var(--color-blue);
+    background-color: $darkblue;
+    box-shadow: inset 5em 0 0 0 $darkblue, inset -5em 0 0 0 $darkblue;
+    border-color: $darkblue;
     color: #ffffff;
 }
 

@@ -59,7 +59,7 @@
     width: 80%;
     text-transform: uppercase;
     margin: 50px 0;
-    border: 1px solid var(--color-blue);
+    border: 1px solid $darkblue;
     border-radius: 3px;
 }
 
@@ -116,10 +116,10 @@
         width: 40%;
     }
     .home-cta:hover{
-        background-color: var(--color-blue);
-        box-shadow: inset 5em 0 0 0 var(--color-blue),
-        inset -5em 0 0 0 var(--color-blue);
-        border-color: var(--color-blue);
+        background-color: $darkblue;
+        box-shadow: inset 5em 0 0 0 $darkblue,
+        inset -5em 0 0 0 $darkblue;
+        border-color: $darkblue;
         color: #ffffff;
         transition:all 0.4s;
     }

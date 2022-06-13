@@ -1,9 +1,12 @@
 /********** 1. GENERAL **********/
 /********** 1.1 Variables **********/
-:root {
-  --color-blue: #192a3d;
-  --color-bg: #f2f5f7;
-}
+// :root {
+//   --color-blue: #192a3d;
+//   --color-bg: #f2f5f7;
+// }
+// COLORS
+$background: #f2f5f7;
+$darkblue: #192a3d;
 
 /********** 1.1 Corps **********/
 * {
@@ -11,7 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: var(--color-blue);
+  color: $darkblue;
   font-size: 1rem;
 }
 
@@ -75,7 +78,6 @@ a {
 }
 
 .container {
-  /* padding: 0 20px; */
   padding: 50px 20px 20px 20px;
 }
 

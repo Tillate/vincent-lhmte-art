@@ -1,7 +1,7 @@
 /********** 10. ACCOUNT **********/
 // template : account/index.html.twig
 .account-item {
-    background-color: var(--color-bg);
+    background-color: $background;
     padding: 30px;
     text-align: center;
     margin-top: 15px;
@@ -15,7 +15,7 @@
         align-items: center;
         text-transform: uppercase;
         font-size: 13px;
-        color: var(--color-blue);
+        color: $darkblue;
         font-weight: bold;
         transition: 0.3s ease;
 
@@ -57,7 +57,7 @@
     padding: 30px;
     margin: 15px;
     border-radius: 3px;
-    background-color: var(--color-bg);
+    background-color: $background;
 }
 
 // Add new address Form
@@ -86,7 +86,7 @@ form {
     display: grid;
     grid-template-columns: 1fr;
     margin: 20px 0;
-    background-color: var(--color-bg);
+    background-color: $background;
 }
 
 .order-card-info {

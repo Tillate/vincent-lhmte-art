@@ -1,14 +1,14 @@
 /********** 13. ORDER RECAP **********/
 // add.html.twig
 .form-check {
-    background-color: var(--color-bg);
+    background-color: $background;
     padding: 20px 45px 20px 20px;
     margin-top: 10px;
     border-radius: 3px;
 }
 
 .order-summary {
-    background-color: var(--color-bg);
+    background-color: $background;
     padding: 20px;
     margin-top: 10px;
 }
@@ -36,7 +36,7 @@ margin-bottom: 25px;
     text-align: center;
     gap: 5px;
     padding: 20px;
-    background-color: var(--color-bg);
+    background-color: $background;
     margin-top: 10px;
 }
 
@@ -58,7 +58,7 @@ margin-bottom: 25px;
 }
 
 .order-validate-address {
-    background-color: var(--color-bg);
+    background-color: $background;
     padding: 20px 50px;
 }
 .order-info {

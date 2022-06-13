@@ -56,17 +56,17 @@
 
 .add-cart {
     padding: 12px 20px;
-    border: 1px solid var(--color-blue);
+    border: 1px solid $darkblue;
     border-radius: 3px;
     transition: all 0.3s;
     margin-top: 80px;
 }
 
 .add-cart:hover {
-    background-color: var(--color-blue);
-    box-shadow: inset 5em 0 0 0 var(--color-blue),
-        inset -5em 0 0 0 var(--color-blue);
-    border-color: var(--color-blue);
+    background-color: $darkblue;
+    box-shadow: inset 5em 0 0 0 $darkblue,
+        inset -5em 0 0 0 $darkblue;
+    border-color: $darkblue;
     color: #ffffff;
 }
 
@@ -85,7 +85,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--color-blue);
+    background-color: $darkblue;
 }
 .filtres h5 {
     font-weight: 400;
@@ -114,12 +114,12 @@
 
 /********** 6.3.2 Filter Menu  **********/
 .menu2 {
-    background-color: var(--color-bg);
+    background-color: $background;
     font-weight: 400;
     position: absolute;
     top: 25px;
     width: 100%;
-    background: var(--color-bg);
+    background: $background;
     transform: translate(-300%, 0);
     transition: transform 0.6s cubic-bezier(0.77,0.2,0.05,1.0);
 }
