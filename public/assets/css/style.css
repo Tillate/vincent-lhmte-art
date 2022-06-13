@@ -460,7 +460,7 @@ footer {
   background-color: var(--color-bg);
 }
 
-.footer-nav {
+footer .footer-nav {
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -473,6 +473,8 @@ footer p {
 
 footer a:hover {
   opacity: 0.7;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 /********** 10. ACCOUNT **********/
