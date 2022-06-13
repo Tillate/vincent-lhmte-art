@@ -3,9 +3,10 @@
 .title {
     text-align: center;
     font-weight: 300;
-}
-.title a {
-    font-size: 2rem;
+    
+    a {
+        font-size: 2rem;
+    }
 }
 
 /********** 3.2 Container **********/
@@ -19,24 +20,22 @@
 .breadcrumb {
     margin-bottom: 30px;
     align-self: flex-start;
-}
 
-.breadcrumb ul {
-    display: flex;
-}
-.breadcrumb a, .breadcrumb span {
-    font-size: 0.8rem;
-}
-.breadcrumb a:hover {
-    opacity: 0.8;
-}
-
-.breadcrumb li::before {
-    content: ">";
-    margin: 0 8px;
-}
-    
-.breadcrumb li:first-child::before {
-    content: "";
-    margin: 0;
+    ul {
+        display: flex;
+    }
+    a, span {
+        font-size: 0.8rem;
+    }
+    a:hover {
+        opacity: 0.8;
+    }
+    li::before {
+        content: ">";
+        margin: 0 8px;
+    }
+    li:first-child::before {
+        content: "";
+        margin: 0;
+    }
 }

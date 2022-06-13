@@ -2,9 +2,7 @@
 /********** 1.1 Variables **********/
 :root {
   --color-blue: #192a3d;
-  $darkblue: #192a3d;
   --color-bg: #f2f5f7;
-  $background: #f2f5f7;
 }
 
 /********** 1.1 Corps **********/
@@ -59,15 +57,19 @@ a {
 .mb15 {
   margin-bottom: 15px;
 }
+
 .mt15 {
   margin-top: 15px;
 }
+
 .link-underline {
   text-decoration: underline;
 }
+
 .link-underline:hover {
   opacity: 0.8;
 }
+
 .bold {
   font-weight: 700;
 }
