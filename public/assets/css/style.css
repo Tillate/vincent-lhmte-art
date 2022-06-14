@@ -542,6 +542,10 @@ footer a:hover {
       flex-wrap: wrap;
 }
 
+.address-info {
+  text-align: center;
+}
+
 .address-card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -940,7 +944,7 @@ form {
   width: 100%;
 }
 
-.input-form {
+.contact-form .input-form {
   width: 100%;
   height: 40px;
   border: 1px solid #ced4da;
@@ -948,13 +952,14 @@ form {
   padding: 12px 12px;
 }
 
-.input-text {
+.contact-form .input-text {
   height: 100px;
 }
 
 .contact-btn {
   background-color: white;
-  padding: 12px 40px;
+  display: block;
+  height: 40px;
   border: 1px solid #192a3d;
   border-radius: 3px;
   -webkit-transition: all 0.3s;
@@ -970,7 +975,7 @@ form {
   color: #ffffff;
 }
 
-.contact-info, .address-info {
+.contact-info {
   text-align: center;
 }
 
