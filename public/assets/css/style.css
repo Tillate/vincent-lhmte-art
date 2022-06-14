@@ -774,10 +774,6 @@ form {
   border-radius: 3px;
 }
 
-.primary-img {
-  width: 100%;
-}
-
 /********** 5.3 Galery CTA BTN **********/
 .home-cta {
   display: -webkit-box;
@@ -795,6 +791,16 @@ form {
   margin: 50px 0;
   border: 1px solid #192a3d;
   border-radius: 3px;
+}
+
+.home-cta:hover {
+  background-color: #192a3d;
+  -webkit-box-shadow: inset 5em 0 0 0 #192a3d, inset -5em 0 0 0 #192a3d;
+          box-shadow: inset 5em 0 0 0 #192a3d, inset -5em 0 0 0 #192a3d;
+  border-color: #192a3d;
+  color: #ffffff;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 /********** 5.4 Reviews **********/
@@ -817,12 +823,12 @@ form {
   margin: 50px 0;
 }
 
-.card-reviews {
-  text-align: center;
-}
-
 .container-review h2, .card-reviews p {
   margin: 0;
+}
+
+.card-reviews {
+  text-align: center;
 }
 
 .card-reviews p:first-child {
@@ -866,15 +872,6 @@ form {
   }
   .home-cta {
     width: 40%;
-  }
-  .home-cta:hover {
-    background-color: #192a3d;
-    -webkit-box-shadow: inset 5em 0 0 0 #192a3d, inset -5em 0 0 0 #192a3d;
-            box-shadow: inset 5em 0 0 0 #192a3d, inset -5em 0 0 0 #192a3d;
-    border-color: #192a3d;
-    color: #ffffff;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
   }
   .container-assurance {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
