@@ -1,21 +1,24 @@
 /********** 8. EXHIBITION PAGE **********/
+// exhibition/index.html.twig
 .container-exhibition {
     max-width: 1290px;
     width: 100%;
 }
+
 .exhibitions-description {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.exhibitions-description img {
-    width: 100%;
-    max-width: 800px;
-}
 
-.exhibitions-text {
-    margin-top: 10px;
-    font-weight: 600;
-    text-align: center;
+    img {
+        width: 100%;
+        max-width: 800px;
+    }
+    
+    p {
+        margin-top: 10px;
+        font-weight: 600;
+        text-align: center;
+    }
 }
