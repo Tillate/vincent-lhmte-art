@@ -1383,10 +1383,6 @@ form {
   margin-bottom: 20px;
 }
 
-.cart-desc th:nth-child(3) {
-  margin-left: 50px;
-}
-
 .cart-desc::before {
   content: "";
   position: absolute;
@@ -1394,6 +1390,10 @@ form {
   width: 100%;
   bottom: -10px;
   background-color: #192a3d;
+}
+
+.cart-desc th:nth-child(3) {
+  margin-left: 50px;
 }
 
 @media only screen and (max-width: 425px) {

@@ -1,23 +1,29 @@
 /********** 11. CART PAGE **********/
+// Template: cart/index.html.twig
 .cart-container, .cart-tab {
     width: 100%;
     max-width: 800px;
 }
+
 .cart-tab {
     margin: 20px 0;
 }
+
 .cart-img {
     height: 150px;
     width: 120px;
     object-fit: cover;
 }
+
 .cart-total {
     margin-bottom: 30px;
+
+    p {
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
 }
-.cart-total p {
-    font-weight: 600;
-    margin-bottom: 15px;
-}
+
 .cart-btn, .cart-total p {
     display: block;
     max-width: 400px;
@@ -31,17 +37,18 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-}
-.cart-desc th:nth-child(3) {
-    margin-left: 50px;
-}
-.cart-desc::before {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: -10px;
-    background-color: $darkblue;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        bottom: -10px;
+        background-color: $darkblue;
+    } 
+    th:nth-child(3) {
+        margin-left: 50px;
+    }
 }
 
 @media only screen and (max-width: 425px) {
