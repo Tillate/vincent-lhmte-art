@@ -70,9 +70,17 @@ class OrderCrudController extends AbstractCrudController
         $updateDelivery = Action::new('updateDelivery', 'Livraison en cours', 'fas fa-truck')->linkToCrudAction('updateDelivery');
 
         return $actions
+            ->add('index', 'detail')
+            ->add('index', $updatePreparation)
+            ->add('index', $updateDelivery)
             ->add('detail', $updatePreparation)
             ->add('detail', $updateDelivery)
-            ->add('index', 'detail');
+
+            // Suppression du bouton remove et edit
+            ->remove('index', Action::EDIT)
+            ->remove('index', Action::DELETE)
+            ->remove('detail', Action::EDIT)
+            ->remove('detail', Action::DELETE);
     }
 
     //Fonction modification du state à 2 et envoi du mail
