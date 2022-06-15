@@ -35,7 +35,7 @@
 
 
 /********** 10.3 Account Adresses **********/
-// template : account/address.html.twig
+// Template : account/address.html.twig
 .address-container {
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@
 }
 
 // Add new address Form
-// template : account/address_form.html.twig
+// Template : account/address_form.html.twig
 form {
     width: 100%;
 }
@@ -80,7 +80,7 @@ form {
 }
 
 /********** 10.4 Account Order **********/
-// template : account/order.html.twig
+// Template : account/order.html.twig
 .order-card {
     max-width: 450px;
     width: 100%;

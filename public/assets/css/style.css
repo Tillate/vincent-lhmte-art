@@ -487,12 +487,14 @@ header {
 .menu2 {
   background-color: #f2f5f7;
   font-weight: 400;
+  padding: 20px;
   position: absolute;
-  top: 25px;
+  top: 50px;
   width: 100%;
+  max-width: 300px;
   background: #f2f5f7;
-  -webkit-transform: translate(-300%, 0);
-          transform: translate(-300%, 0);
+  -webkit-transform: translate(-220%, 0);
+          transform: translate(-220%, 0);
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
   transition: -webkit-transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
   transition: transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -503,9 +505,27 @@ header {
   height: 2rem;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1424px) {
   .menu2 {
-    width: 48%;
+    left: -50px;
+  }
+}
+
+@media only screen and (min-width: 1680px) {
+  .menu2 {
+    left: -180px;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .menu2 {
+    left: -250px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .menu2 {
+    left: -300px;
   }
 }
 
