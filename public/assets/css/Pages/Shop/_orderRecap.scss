@@ -1,5 +1,6 @@
-/********** 13. ORDER RECAP **********/
-// add.html.twig
+/********** 12. Delivery options **********/
+/********** 13. Order Recap **********/
+// Template: order/index.html.twig | order/add.html.twig
 .form-check {
     background-color: $background;
     padding: 20px 45px 20px 20px;
@@ -28,35 +29,26 @@
 margin-bottom: 25px;
 }
 
-/********** 13.1 Order Details **********/
-.order-detail-container{
-    width: 300px;
+
+// Template : order/add.html.twig
+
+.carrier-container {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    gap: 5px;
-    padding: 20px;
-    background-color: $background;
-    margin-top: 10px;
-}
-
-.align-left {
-    text-align: start;
-}
-
-.order-detail-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px 0;
-}
-.order-detail-card div {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-    max-width: 250px;
+    max-width: 800px;
+    justify-content: space-between;
+    margin: 25px 0;
 }
 
+@media only screen and (min-width: 768px) {
+    .carrier-container {
+        flex-direction: row;
+    }
+}
+
+
+// Template order_validate/index.html.twig
 .order-validate-address {
     background-color: $background;
     padding: 20px 50px;

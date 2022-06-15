@@ -433,6 +433,82 @@ header {
   margin: 0;
 }
 
+/********** 6.3 Filter  **********/
+.filter-container {
+  width: 100%;
+  max-width: 1290px;
+}
+
+/********** 6.3.1 Filter Btn  **********/
+.filtres {
+  padding: 5px 15px;
+  width: 108px;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #192a3d;
+}
+
+.filtres h5 {
+  font-weight: 400;
+  color: white;
+  font-size: 18px;
+}
+
+/********** 6.3.2 Filter Toggle Menu  **********/
+.menuToggle2 {
+  position: relative;
+  z-index: 5;
+}
+
+.menuToggle2 input:checked ~ .menu2 {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.filter-input {
+  position: absolute;
+  z-index: 5;
+  width: 108px;
+  height: 2rem;
+  top: -33px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/********** 6.3.2 Filter Menu  **********/
+.menu2 {
+  background-color: #f2f5f7;
+  font-weight: 400;
+  position: absolute;
+  top: 25px;
+  width: 100%;
+  background: #f2f5f7;
+  -webkit-transform: translate(-300%, 0);
+          transform: translate(-300%, 0);
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: -webkit-transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.search-input {
+  height: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu2 {
+    width: 48%;
+  }
+}
+
 /********** 4. FOOTER **********/
 footer {
   display: -webkit-box;
@@ -699,6 +775,52 @@ form {
 
 .required {
   margin-bottom: 5px;
+}
+
+/********** 13.1 Order Details **********/
+.order-detail-container {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  gap: 5px;
+  padding: 20px;
+  background-color: #f2f5f7;
+  margin-top: 10px;
+}
+
+.align-left {
+  text-align: start;
+}
+
+.order-detail-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0;
+}
+
+.order-detail-card div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  max-width: 250px;
 }
 
 /* ********** 4.1 CGV & MENTIONS LEGALES *********** */
@@ -1018,8 +1140,18 @@ form {
   margin-bottom: 10px;
 }
 
+.product-item h5 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+}
+
 .product-item .product-price {
   font-weight: 600;
+}
+
+.product-price {
+  margin-bottom: 15px;
 }
 
 /********** 6.2.1 Product Description **********/
@@ -1055,16 +1187,6 @@ form {
   }
 }
 
-.product-item h5 {
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 18px;
-}
-
-.product-price {
-  margin-bottom: 15px;
-}
-
 /********** 6.2.2 Add cart **********/
 .add-cart {
   padding: 12px 20px;
@@ -1083,76 +1205,6 @@ form {
   color: #ffffff;
 }
 
-/********** 6.3 Filter  **********/
-.filter-container {
-  width: 100%;
-  max-width: 1290px;
-}
-
-/********** 6.3.1 Filter Btn  **********/
-.filtres {
-  padding: 5px 15px;
-  width: 108px;
-  border-radius: 3px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-color: #192a3d;
-}
-
-.filtres h5 {
-  font-weight: 400;
-  color: white;
-  font-size: 18px;
-}
-
-/********** 6.3.2 Filter Toggle Menu  **********/
-.menuToggle2 {
-  position: relative;
-  z-index: 5;
-}
-
-.menuToggle2 input:checked ~ .menu2 {
-  -webkit-transform: none;
-          transform: none;
-}
-
-.filter-input {
-  position: absolute;
-  z-index: 5;
-  width: 108px;
-  height: 2rem;
-  top: -33px;
-  opacity: 0;
-  cursor: pointer;
-}
-
-/********** 6.3.2 Filter Menu  **********/
-.menu2 {
-  background-color: #f2f5f7;
-  font-weight: 400;
-  position: absolute;
-  top: 25px;
-  width: 100%;
-  background: #f2f5f7;
-  -webkit-transform: translate(-300%, 0);
-          transform: translate(-300%, 0);
-  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
-  transition: -webkit-transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
-  transition: transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
-  transition: transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-.search-input {
-  height: 2rem;
-}
-
 /********** 6.4 Media Queries **********/
 @media only screen and (min-width: 768px) {
   .product-container {
@@ -1165,9 +1217,6 @@ form {
   .product-container {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-  }
-  .menu2 {
-    width: 48%;
   }
 }
 
@@ -1409,33 +1458,8 @@ form {
   }
 }
 
-/********** 12. DELIVERY OPTIONS **********/
-.carrier-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  max-width: 800px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 25px 0;
-}
-
-@media only screen and (min-width: 768px) {
-  .carrier-container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-}
-
-/********** 13. ORDER RECAP **********/
+/********** 12. Delivery options **********/
+/********** 13. Order Recap **********/
 .form-check {
   background-color: #f2f5f7;
   padding: 20px 45px 20px 20px;
@@ -1473,9 +1497,7 @@ form {
   margin-bottom: 25px;
 }
 
-/********** 13.1 Order Details **********/
-.order-detail-container {
-  width: 300px;
+.carrier-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1483,40 +1505,21 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
-  gap: 5px;
-  padding: 20px;
-  background-color: #f2f5f7;
-  margin-top: 10px;
-}
-
-.align-left {
-  text-align: start;
-}
-
-.order-detail-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 10px 0;
-}
-
-.order-detail-card div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 100%;
+  max-width: 800px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
-  max-width: 250px;
+  margin: 25px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .carrier-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .order-validate-address {

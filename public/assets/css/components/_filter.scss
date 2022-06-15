@@ -1,0 +1,61 @@
+/********** 6.3 Filter  **********/
+.filter-container {
+    width: 100%;
+    max-width: 1290px;
+}
+
+/********** 6.3.1 Filter Btn  **********/
+.filtres {
+    padding: 5px 15px;
+    width: 108px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $darkblue;
+}
+.filtres h5 {
+    font-weight: 400;
+    color: white;
+    font-size: 18px;
+}
+
+/********** 6.3.2 Filter Toggle Menu  **********/
+.menuToggle2 {
+    position: relative;
+    z-index: 5;
+}
+.menuToggle2 input:checked ~ .menu2 {
+    transform: none;
+}
+
+.filter-input {
+    position: absolute;
+    z-index: 5;
+    width: 108px;
+    height: 2rem;
+    top: -33px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/********** 6.3.2 Filter Menu  **********/
+.menu2 {
+    background-color: $background;
+    font-weight: 400;
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    background: $background;
+    transform: translate(-300%, 0);
+    transition: transform 0.6s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+.search-input {
+    height: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+    .menu2 {
+        width: 48%;
+    }
+}

@@ -4,10 +4,12 @@
 @import './components/buttons';
 @import './components/header';
 @import './components/main';
+@import './components/filter';
 @import './components/footer';
 
 @import './Pages/Account/account';
 @import './Pages/Account/loginRegister';
+@import './Pages/Account/orderDetails';
 
 @import './Pages/CGV/CGV';
 @import './Pages/Home/home';
@@ -17,5 +19,4 @@
 @import './Pages/Shop/products';
 @import './Pages/Shop/singleProduct';
 @import './Pages/Shop/cart';
-@import './Pages/Shop/deliveryOptions';
 @import './Pages/Shop/orderRecap';
