@@ -15,14 +15,13 @@
 }
 
 /********** 7.2 Images Galery **********/
+// Template: product/show.html.twig
 .product-image-container {
     display: flex;
     flex-direction: column;
     gap: 5px;
     max-width: 450px;
     max-height: 750px;
-    /* width: 50%; */
-    /* height: 100%; */
 }
 .img-product {
     height: 100%;
@@ -31,20 +30,18 @@
 .single-product-img {
     object-fit: cover;
     height: 100%;
-    /* width: 100%; */
     max-width: 300px;
-    /* max-width: 400px; */
-    /* max-height: 500px; */
     max-height: 550px;
     border-radius: 3px;
 }
 
 /********** 7.2.1 Galery **********/
-.product-image-galerie img:hover{
-    cursor: pointer;   
-}
 .product-image-galerie img {
     object-fit: cover;
+
+    &:hover{
+        cursor: pointer;   
+    }
 }
 
 /********** 7.2.2 Fade effect script galery **********/
@@ -54,7 +51,7 @@
     }
 }
   
-  .fade-in {
+.fade-in {
     opacity: 0;
     animation: fadeIn 0.4s ease-in 1 forwards;
 }
@@ -63,8 +60,6 @@
 .single-product-description {
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
-    /* width: 50%; */
     max-width: 450px;
     gap: 20px;
 }

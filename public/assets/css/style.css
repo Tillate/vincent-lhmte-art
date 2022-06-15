@@ -1263,8 +1263,6 @@ form {
   gap: 5px;
   max-width: 450px;
   max-height: 750px;
-  /* width: 50%; */
-  /* height: 100%; */
 }
 
 .img-product {
@@ -1276,22 +1274,19 @@ form {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
-  /* width: 100%; */
   max-width: 300px;
-  /* max-width: 400px; */
-  /* max-height: 500px; */
   max-height: 550px;
   border-radius: 3px;
 }
 
 /********** 7.2.1 Galery **********/
-.product-image-galerie img:hover {
-  cursor: pointer;
-}
-
 .product-image-galerie img {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.product-image-galerie img:hover {
+  cursor: pointer;
 }
 
 /********** 7.2.2 Fade effect script galery **********/
@@ -1321,8 +1316,6 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  /* width: 100%; */
-  /* width: 50%; */
   max-width: 450px;
   gap: 20px;
 }
